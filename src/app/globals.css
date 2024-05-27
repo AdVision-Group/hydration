@@ -36,7 +36,7 @@ body {
   font-family: "Gazpacho";
   font-style: normal;
   font-weight: 100 900;
-  src: url(/font/gazpacho/gazpacho.ttf) format("truetype");
+  src: url(/font/gazpacho/gazpacho2.otf) format("opentype");
 }
 
 @font-face {

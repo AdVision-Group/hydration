@@ -17,6 +17,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontSize: {
+        "2xs": "0.625rem",
+      },
     },
     screens,
     colors: {
@@ -42,6 +45,7 @@ const config: Config = {
     borderRadius: {
       sm: "8px",
       lg: "32px",
+      xl: "50px",
     },
     fontFamily: {
       geist: ["Geist", "sans-serif"],
