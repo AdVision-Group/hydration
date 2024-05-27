@@ -20,6 +20,9 @@ const config: Config = {
       fontSize: {
         "2xs": "0.625rem",
       },
+      animation: {
+        "counter-spin": "counter-spin 1s linear infinite",
+      },
     },
     screens,
     colors: {
@@ -46,6 +49,7 @@ const config: Config = {
       sm: "8px",
       lg: "32px",
       xl: "50px",
+      full: "9999px",
     },
     fontFamily: {
       geist: ["Geist", "sans-serif"],
@@ -67,6 +71,6 @@ const config: Config = {
     },
   },
   defaultScreens: ["20rem", "75rem"],
-  plugins: [fluid],
+  plugins: [fluid, require("tailwindcss-animate")],
 };
 export default config;

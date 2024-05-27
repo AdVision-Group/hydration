@@ -18,7 +18,8 @@
     "react": "^18",
     "react-dom": "^18",
     "serve": "^14.2.3",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",

@@ -52,3 +52,12 @@ body {
   font-weight: 100 900;
   src: url(/font/inter/inter.ttf) format("truetype");
 }
+
+@keyframes counter-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
