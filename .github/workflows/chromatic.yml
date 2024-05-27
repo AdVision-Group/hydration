@@ -11,12 +11,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
+      - uses: oven-sh/setup-bun@v1
         with:
-          version: 8.7.6
+          bun-version: latest
 
       - name: Install dependencies
-        run: pnpm i
+        run: bun i
 
       - name: Run Chromatic
         uses: chromaui/action@latest
