@@ -50,7 +50,7 @@ export default function FooterSocials() {
           target="_blank"
           className="cursor-pointer hover:scale-105 transition-transform duration-200 ease-in-out"
         >
-          <Image src={social.logo} alt={social.name} width={40} height={40} />
+          <Image src={social.logo} alt={social.name} width={28} height={28} />
         </Link>
       ))}
     </div>
