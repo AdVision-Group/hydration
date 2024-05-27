@@ -11,14 +11,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.7.6
+
       - name: Install dependencies
-        # ⚠️ Pick one of these, matching the package manager for your project
-        run: npm ci
-        # run: pnpm install
-        # run: yarn install --immutable --immutable-cache --check-cache
+        run: pnpm i
 
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
-          # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
