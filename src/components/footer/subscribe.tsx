@@ -1,4 +1,4 @@
-import Button from "../buttons/button";
+import Button from "../ui/buttons/button";
 import Input from "../ui/input/input";
 
 export default function SubscribeToNewsletter() {

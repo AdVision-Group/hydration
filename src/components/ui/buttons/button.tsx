@@ -1,8 +1,8 @@
+import Arrow from "@/components/icons/arrow";
+import Star from "@/components/icons/star";
 import Link from "next/link";
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import Arrow from "../../icons/arrow";
-import Star from "../../icons/star";
 
 type ButtonAction =
   | {
@@ -31,7 +31,7 @@ export default function Button({
   let colorClassName = "";
 
   if (role === "primary") {
-    colorClassName = "bg-flamengo text-white-0";
+    colorClassName = "bg-flamingo text-white-0";
   } else if (role === "secondary") {
     colorClassName = "bg-white-300 text-purple";
   } else if (role === "tertiary") {
