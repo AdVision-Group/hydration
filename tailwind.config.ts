@@ -70,15 +70,14 @@ const config: Config = {
       "lavender-inset": "0 0 16px 0 #DFB1F3 inset",
       "blue-inset": "0 0 16px 0 #B3D7FA inset",
     },
-  },
-  container: {
-    center: true,
-    padding: {
-      DEFAULT: "1rem",
-      xxl: "4rem",
-    },
-    screens: {
-      xl: "75rem",
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        xl: "4rem",
+      },
+      screens: {
+        xl: "83rem",
+      },
     },
   },
   defaultScreens: ["20rem", "75rem"],

@@ -43,7 +43,7 @@ export default function BuiltToBeUnstoppableSection() {
         </div>
         <div>
           <Divider />
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 gap-2">
             {items.map((item, index) => (
               <Item key={index} {...item} />
             ))}

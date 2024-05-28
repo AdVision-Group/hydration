@@ -49,13 +49,13 @@ export default function EfficientTradingCard({
   return (
     <article
       className={twMerge(
-        "rounded-lg p-12 h-[441px]",
+        "rounded-lg p-12 lg:h-[500px] xl:h-[441px]",
         getColorClassName(theme),
         className
       )}
     >
       <div className="relative h-full w-full">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 pb-10 lg:pb-0">
           <Image src={icon.src} alt={icon.alt} width={56} height={56} />
           <Heading
             size="medium"
@@ -73,7 +73,7 @@ export default function EfficientTradingCard({
             {description}
           </Paragraph>
         </div>
-        <div className="absolute bottom-0 left-0 flex gap-4 justify-end w-full">
+        <div className="lg:absolute flex-col items-end md:flex-row bottom-0 left-0 flex gap-4 justify-end w-full">
           {buttons}
         </div>
       </div>

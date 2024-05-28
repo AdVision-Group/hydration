@@ -10,9 +10,9 @@ import CandlesticksIcon from "./assets/candlesticks.svg";
 export default function EffectiveTradingSection() {
   return (
     <section className="bg-white pb-[7.5rem]">
-      <div className="container flex flex-col gap-5">
+      <div className="container mx-auto flex flex-col gap-5">
         <SectionLabel>Efficient Trading</SectionLabel>
-        <div className="grid grid-cols-10 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 ">
           <EfficientTradingCard
             title="Split your trades"
             description="No trade is too large for Hydration. Our user-friendly trading app will help you minimize slippage by allowing you to easily split your order in several consecutive trades."
@@ -28,7 +28,7 @@ export default function EffectiveTradingSection() {
                 Discover split trading
               </Button>,
             ]}
-            className="col-span-4"
+            className="lg:col-span-4"
           />
           <EfficientTradingCard
             title="Swap your favorite assets"
@@ -45,7 +45,7 @@ export default function EffectiveTradingSection() {
                 Find your next swap
               </Button>,
             ]}
-            className="col-span-6"
+            className="lg:col-span-6"
           />
           <EfficientTradingCard
             title="Automate your trades"
@@ -70,7 +70,7 @@ export default function EffectiveTradingSection() {
                 Learn more
               </Button>,
             ]}
-            className="col-span-6"
+            className="lg:col-span-6"
           />
           <EfficientTradingCard
             title="Trade over-the-counter"
@@ -87,7 +87,7 @@ export default function EffectiveTradingSection() {
                 Place an OTC order
               </Button>,
             ]}
-            className="col-span-4"
+            className="lg:col-span-4"
           />
         </div>
       </div>
