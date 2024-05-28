@@ -1,37 +1,28 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
-// having a default because of storybook
-import LockIcon from "./assets/lock.svg";
+import React from "react";
+import Title from "@/components/ui/typography/title";
+import Paragraph from "@/components/ui/typography/paragraph";
 
 export type DevsAndSecurityItemProps = {
   title: string;
   description: string;
-  icon?: {
-    image: StaticImport;
-    alt: string;
-  };
+  icon: React.ComponentType<{ className?: string }>;
 };
 
 export default function DevsAndSecurityItem({
   title,
   description,
-  icon = {
-    image: LockIcon,
-    alt: "Lock",
-  },
+  icon: Icon,
 }: DevsAndSecurityItemProps) {
   return (
-    <div className="flex gap-5 p-2 bg-white rounded-md border border-lavender">
-      <div className="rounded-sm bg-white shadow-lavender-inset w-[4.875rem] h-[6.125rem] flex justify-center items-center">
-        <Image src={icon.image} alt={icon.alt} />
+    <div className="flex gap-5 p-2 bg-white rounded-md border border-blue group">
+      <div className="rounded-sm bg-white shadow-blue-inset w-[4.875rem] h-[6.125rem] flex justify-center items-center">
+        <Icon className="transition-all text-blue group-hover:text-purple" />
       </div>
       <div className="flex flex-col gap-4 max-w-[351px]">
-        <h4 className="font-geist font-medium text-2xl text-purple leading-7 pt-2">
-          {title}
-        </h4>
-        <p className="font-geist font-normal text-sm text-purple-dim leading-4 ">
+        <Title size="small">{title}</Title>
+        <Paragraph className="text-purple-dim" size="small">
           {description}
-        </p>
+        </Paragraph>
       </div>
     </div>
   );

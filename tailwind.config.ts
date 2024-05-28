@@ -68,6 +68,7 @@ const config: Config = {
     },
     boxShadow: {
       "lavender-inset": "0 0 16px 0 #DFB1F3 inset",
+      "blue-inset": "0 0 16px 0 #B3D7FA inset",
     },
   },
   container: {

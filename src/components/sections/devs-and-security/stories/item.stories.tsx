@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import DevsAndSecurityItem from "../item";
 import LockIcon from "../assets/lock.svg";
+import CodeIcon from "../icons/code";
 
 const meta = {
   title: "DevsAndSecurity/Item",
@@ -19,6 +20,7 @@ export const Default: Story = {
   args: {
     title: "Hydration security",
     description: "Find and report vulnerabilities, receive generous rewards.",
+    icon: CodeIcon,
   },
   parameters: {
     viewport: {
