@@ -3,7 +3,7 @@ import ScrollLock from "./scroll-lock";
 export default function ScrollLockDemo() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-lavender">
-      <div className="p-[600px] bg-lavender" />
+      <div className="p-[600px] bg-purple" />
       <ScrollLock
         durationPx={2000}
         render={(progress) => (

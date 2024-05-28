@@ -11,6 +11,27 @@ type ScrollLockProps = {
   render: (progress: number) => React.ReactNode; // Render prop to render content based on progress.
 };
 
+// const useAnimationFrame = (callback: (deltaTime: number) => {}) => {
+//   // Use useRef for mutable variables that we want to persist
+//   // without triggering a re-render on their change
+//   const requestRef = React.useRef<any>();
+//   const previousTimeRef = React.useRef<any>();
+
+//   const animate = (time: number) => {
+//     if (previousTimeRef.current != undefined) {
+//       const deltaTime = time - previousTimeRef.current;
+//       callback(deltaTime);
+//     }
+//     previousTimeRef.current = time;
+//     requestRef.current = requestAnimationFrame(animate);
+//   };
+
+//   React.useEffect(() => {
+//     requestRef.current = requestAnimationFrame(animate);
+//     return () => cancelAnimationFrame(requestRef.current);
+//   }, []); // Make sure the effect runs only once
+// };
+
 export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
   const [scrollY, setScrollY] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -35,6 +56,13 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
         placeholderRef.current.offsetTop - window.innerHeight;
     }
   }, []);
+
+  const uncappedProgress = useMemo(() => {
+    if (initialTopRef.current !== null) {
+      return ((scrollY - initialTopRef.current) / durationPx) * 100;
+    }
+    return 0;
+  }, [scrollY, durationPx]);
 
   const progress = useMemo(() => {
     if (initialTopRef.current !== null) {
@@ -75,6 +103,13 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
       <div ref={contentRef} style={getStyle()}>
         {render(progress)}
       </div>
+      {/* TODO: swap for a prop color */}
+      {uncappedProgress > -10 && uncappedProgress < 40 && (
+        <div className="fixed bg-purple h-[50vh] w-screen bottom-0 left-0"></div>
+      )}
+      {uncappedProgress < 110 && uncappedProgress > 60 && (
+        <div className="fixed bg-purple h-[50vh] w-screen top-0 left-0"></div>
+      )}
       <div
         ref={placeholderRef}
         style={{ height: `calc(${durationPx}px  - 100vh)` }}
