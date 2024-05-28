@@ -20,6 +20,9 @@ dependencies:
   react-dom:
     specifier: ^18
     version: 18.3.1(react@18.3.1)
+  react-scrollmagic:
+    specifier: ^2.3.0
+    version: 2.3.0(react-dom@18.3.1)(react@18.3.1)
   serve:
     specifier: ^14.2.3
     version: 14.2.3
@@ -8918,6 +8921,17 @@ packages:
       use-callback-ref: 1.3.2(@types/react@18.3.3)(react@18.3.1)
       use-sidecar: 1.1.2(@types/react@18.3.3)(react@18.3.1)
     dev: true
+
+  /react-scrollmagic@2.3.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-yVw85uENSPow/ZJxZhPR84nZuyQZQNGfOAaL22+xNAhF5qMX2vbHv0Jeurydc9lS+6OocSY+09MHWQ0LESy9Mg==}
+    engines: {node: '>=8', npm: '>=5'}
+    peerDependencies:
+      react: ^16.0.0-0 || ^17.0.0-0
+      react-dom: ^16.0.0-0 || ^17.0.0-0
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
 
   /react-style-singleton@2.2.1(@types/react@18.3.3)(react@18.3.1):
     resolution: {integrity: sha512-ZWj0fHEMyWkHzKYUr2Bs/4zU6XLmq9HsgBURm7g5pAVfyn49DgUiNgY2d4lXRlYSiCif9YBGpQleewkcqddc7g==}
