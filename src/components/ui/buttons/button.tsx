@@ -53,6 +53,7 @@ export type ButtonProps = {
   action?: ButtonAction;
   decoration?: Decoration;
   disabled?: boolean;
+  className?: string;
 };
 
 export default function Button({
@@ -62,6 +63,7 @@ export default function Button({
   decoration,
   children,
   disabled = false,
+  className,
 }: ButtonProps) {
   const colorClassName = getButtonStyles(role, fill);
   return (
@@ -69,7 +71,8 @@ export default function Button({
       <button
         className={twMerge(
           colorClassName,
-          "cursor-pointer rounded-lg px-5 py-3 font-geist text-base leading-6 font-normal transition"
+          "cursor-pointer rounded-xl px-5 py-3 font-geist text-base leading-6 font-normal transition",
+          className
         )}
         disabled={disabled}
       >

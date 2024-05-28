@@ -35,7 +35,7 @@ const menuItems = [
 
 export default function Header() {
   return (
-    <header className="py-2 xl:py-1 bg-beige px-4 xl:pr-1 xl:rounded-lg xl:mx-10 xl:max-w-[1352px]">
+    <header className="py-2 xl:py-1 bg-beige px-4 xl:pr-1 xl:rounded-xl xl:mx-10 xl:max-w-[1352px]">
       <div className="flex items-center justify-between container xl:max-w-[none]">
         <Logo size="small" />
         <nav className="hidden xl:flex gap-10 justify-center">

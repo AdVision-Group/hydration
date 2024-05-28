@@ -76,7 +76,7 @@ function Stat({ title, value, tagline, animated = true }: StatProps) {
           {title}
         </p>
         {tagline && (
-          <p className="px-1.5 py-1 font-inter uppercase font-semibold text-purple bg-lavender leading-3 text-2xs rounded-xl">
+          <p className="px-1.5 py-1 font-inter uppercase font-semibold text-purple bg-lavender leading-3 text-2xs rounded-2xl">
             {tagline}
           </p>
         )}

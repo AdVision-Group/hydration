@@ -16,7 +16,7 @@ export default function Input({
   return (
     <input
       className={twMerge(
-        "rounded-lg px-4 py-3 font-geist font-normal text-base leading-6 bg-beige text-purple",
+        "rounded-xl px-4 py-3 font-geist font-normal text-base leading-6 bg-beige text-purple",
         className
       )}
       placeholder={placeholder}

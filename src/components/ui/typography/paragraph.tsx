@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 type ParagraphProps = {
   children: React.ReactNode;
   className?: string;
-  size?: "large" | "small";
+  size: "large" | "small";
 };
 
 export default function Paragraph({

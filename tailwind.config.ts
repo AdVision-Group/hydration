@@ -56,8 +56,9 @@ const config: Config = {
       none: "0",
       sm: "8px",
       md: "10px",
-      lg: "32px",
-      xl: "50px",
+      lg: "16px",
+      xl: "32px",
+      "2xl": "50px",
       full: "9999px",
     },
     fontFamily: {
