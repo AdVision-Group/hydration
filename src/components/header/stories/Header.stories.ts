@@ -5,7 +5,7 @@ const meta = {
   title: "UI/Header",
   component: Header,
   parameters: {
-    layout: "fulscreen",
+    layout: "fullscreen",
   },
 
   tags: ["autodocs"],

@@ -5,7 +5,7 @@ export default function SectionLabel({ children }: { children: string }) {
   return (
     <div className="flex gap-[0.35rem] items-center">
       <Image src={Diamond} alt="Diamond" />
-      <h4 className="font-geist font-semibold text-base leading-5 text-pink uppercase">
+      <h4 className="font-geist font-semibold text-base leading-5 text-lavender uppercase">
         {children}
       </h4>
     </div>

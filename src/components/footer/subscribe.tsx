@@ -9,7 +9,7 @@ export default function SubscribeToNewsletter() {
       </p>
       <form className="flex gap-4">
         <Input placeholder="Email address" className="min-w-[275px]" />
-        <Button role="footer" decoration="star">
+        <Button role="primary" decoration="star">
           Join Us
         </Button>
       </form>

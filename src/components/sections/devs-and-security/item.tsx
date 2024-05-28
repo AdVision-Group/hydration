@@ -21,8 +21,8 @@ export default function DevsAndSecurityItem({
   },
 }: DevsAndSecurityItemProps) {
   return (
-    <div className="flex gap-5 p-2 bg-white-0 rounded-md border border-pink">
-      <div className="rounded-sm bg-white-0 shadow-pink-inset w-[4.875rem] h-[6.125rem] flex justify-center items-center">
+    <div className="flex gap-5 p-2 bg-white rounded-md border border-lavender">
+      <div className="rounded-sm bg-white shadow-lavender-inset w-[4.875rem] h-[6.125rem] flex justify-center items-center">
         <Image src={icon.image} alt={icon.alt} />
       </div>
       <div className="flex flex-col gap-4 max-w-[351px]">

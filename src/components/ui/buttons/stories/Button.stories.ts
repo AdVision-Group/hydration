@@ -28,17 +28,18 @@ export const Secondary: Story = {
   },
 };
 
-export const Tertiary: Story = {
+export const PrimaryOutline: Story = {
   args: {
-    role: "tertiary",
+    role: "primary",
+    fill: "outline",
     children: "Hello",
   },
 };
 
-export const Footer: Story = {
+export const SecondaryOutline: Story = {
   args: {
-    role: "footer",
-    children: "Join us",
-    decoration: "star",
+    role: "secondary",
+    fill: "outline",
+    children: "Hello",
   },
 };

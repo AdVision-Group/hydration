@@ -67,14 +67,12 @@ type LinkColumnProps = {
 function LinkColumn({ title, links }: LinkColumnProps) {
   return (
     <div className="flex flex-col gap-6">
-      <h4 className="font-geist font-medium text-purple-dim leading-5">
-        {title}
-      </h4>
+      <h4 className="font-geist font-medium text-purple-dim">{title}</h4>
       {links.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className="text-base font-geist leading-5 text-purple"
+          className="text-base font-geist  text-purple"
         >
           {link.title}
         </Link>

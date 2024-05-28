@@ -15,38 +15,63 @@ type ButtonAction =
 
 type Decoration = "arrow" | "star";
 
+function getButtonStyles(
+  role: "primary" | "secondary",
+  fill: "solid" | "outline"
+) {
+  let className = "";
+  if (role === "primary") {
+    if (fill === "solid") {
+      className =
+        "bg-pink text-white hover:bg-purple active:bg-purple active:text-purple disabled:text-white disabled:bg-[#B4ADAF] ";
+      return className;
+    }
+    if (fill === "outline") {
+      className =
+        "border text-purple border-pink hover:text-pink active:border-purple active:text-purple disabled:text-[#B4ADAF] disabled:border-[#B4ADAF]";
+      return className;
+    }
+  }
+  if (role === "secondary") {
+    if (fill === "solid") {
+      className =
+        "bg-beige text-purple hover:text-pink active:text-purple disabled:bg-[#F6F6F6] disabled:text-[#240E3259]";
+      return className;
+    }
+    if (fill === "outline") {
+      className =
+        "border border-white hover:border-purple hover:text-purple active:text-white active:border-white disabled:text-[#FFFFFF80] disabled:border-[#FFFFFF80]";
+      return className;
+    }
+  }
+}
+
 export type ButtonProps = {
-  role: "primary" | "secondary" | "tertiary" | "footer";
+  role: "primary" | "secondary";
+  children: React.ReactNode;
+  fill?: "solid" | "outline";
   action?: ButtonAction;
   decoration?: Decoration;
-  children: React.ReactNode;
+  disabled?: boolean;
 };
 
 export default function Button({
   role,
+  fill = "solid",
   action,
   decoration,
   children,
+  disabled = false,
 }: ButtonProps) {
-  let colorClassName = "";
-
-  if (role === "primary") {
-    colorClassName = "bg-flamingo text-white-0";
-  } else if (role === "secondary") {
-    colorClassName = "bg-white-300 text-purple";
-  } else if (role === "tertiary") {
-    colorClassName = "bg-transparent text-purple";
-  } else if (role === "footer") {
-    colorClassName = "bg-purple text-pink shadow-pink-inset";
-  }
-
+  const colorClassName = getButtonStyles(role, fill);
   return (
     <ButtonWrapper action={action}>
       <button
         className={twMerge(
           colorClassName,
-          "cursor-pointer rounded-lg px-5 py-3 font-geist text-base leading-6 font-normal"
+          "cursor-pointer rounded-lg px-5 py-3 font-geist text-base leading-6 font-normal transition"
         )}
+        disabled={disabled}
       >
         <ButtonContent decoration={decoration}>{children}</ButtonContent>
       </button>

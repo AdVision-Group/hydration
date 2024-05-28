@@ -60,7 +60,7 @@ export default function DevsAndSecuritySection() {
         <h2 className="font-gazpacho font-bold text-5xl leading-[3.3rem] tracking-tight text-center">
           Help build the <br /> future of finance
         </h2>
-        <p className="font-geist font-normal text-lg leading-6 text-center text-white-300">
+        <p className="font-geist font-normal text-lg leading-6 text-center text-beige">
           Hydration provides the liquidity layer which empowers developers to
           build the financial apps of tomorrow.
         </p>

@@ -19,6 +19,8 @@ const config: Config = {
       },
       fontSize: {
         "2xs": "0.625rem",
+        "4xl": "2.5rem",
+        "3xl": "2rem",
       },
       animation: {
         "counter-spin": "counter-spin 1s linear infinite",
@@ -26,13 +28,10 @@ const config: Config = {
     },
     screens,
     colors: {
-      white: {
-        0: "#FFFFFF",
-        100: "#FFFFFB",
-        300: "#F6F6EC",
-      },
-      flamingo: "#E53E76",
-      pink: {
+      white: "#FFFFFF",
+      beige: "#F6F6EC",
+      pink: "#E53E76",
+      lavender: {
         DEFAULT: "#DFB1F3",
         dim: "#DFB1F380",
       },
@@ -45,7 +44,16 @@ const config: Config = {
       green: "#B3CF92",
       transparent: "transparent",
     },
+    letterSpacing: {
+      tight: "-0.02em",
+    },
+    lineHeight: {
+      none: "1",
+      tight: "1.2",
+      snug: "1.4",
+    },
     borderRadius: {
+      none: "0",
       sm: "8px",
       md: "10px",
       lg: "32px",
@@ -58,13 +66,13 @@ const config: Config = {
       inter: ["Inter", "sans-serif"],
     },
     boxShadow: {
-      "pink-inset": "0 0 16px 0 #DFB1F3 inset",
+      "lavender-inset": "0 0 16px 0 #DFB1F3 inset",
     },
   },
   container: {
     center: true,
     padding: {
-      DEFAULT: "1.25rem",
+      DEFAULT: "1rem",
       xxl: "4rem",
     },
     screens: {

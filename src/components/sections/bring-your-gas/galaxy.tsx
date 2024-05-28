@@ -15,7 +15,7 @@ import { twMerge } from "tailwind-merge";
 
 export default function Galaxy() {
   return (
-    <div className="w-[full] mx-auto max-w-[750px] aspect-square relative bg-white-100">
+    <div className="w-[full] mx-auto max-w-[750px] aspect-square relative bg-white">
       <FirstRank />
       <SecondRank />
       <ThirdRank />
