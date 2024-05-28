@@ -61,7 +61,7 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
     if (initialTopRef.current !== null) {
       return ((scrollY - initialTopRef.current) / durationPx) * 100;
     }
-    return 0;
+    return -99999;
   }, [scrollY, durationPx]);
 
   const progress = useMemo(() => {
@@ -94,6 +94,7 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
     }
     return {
       position: "static" as const,
+      zIndex: 10,
     };
   }, [progress]);
 
@@ -105,16 +106,16 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
       </div>
       {/* TODO: swap for a prop color */}
       {uncappedProgress > -10 && uncappedProgress < 40 && (
-        <div className="fixed bg-purple h-[50vh] w-screen bottom-0 left-0"></div>
+        <div className="fixed bg-purple h-[50vh] w-screen bottom-0 left-0 z-[5]"></div>
       )}
       {uncappedProgress < 110 && uncappedProgress > 60 && (
-        <div className="fixed bg-purple h-[50vh] w-screen top-0 left-0"></div>
+        <div className="fixed bg-purple h-[50vh] w-screen top-0 left-0 z-[5]"></div>
       )}
       <div
         ref={placeholderRef}
         style={{ height: `calc(${durationPx}px  - 100vh)` }}
       />
-      {render(100)}
+      <div className="z-[9]">{render(100)}</div>
     </>
   );
 }
