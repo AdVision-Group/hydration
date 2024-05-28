@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 type ParagraphProps = {
   children: React.ReactNode;
   className?: string;
-  size: "large" | "small";
+  size: "small" | "medium" | "large";
 };
 
 export default function Paragraph({
@@ -16,6 +16,19 @@ export default function Paragraph({
       <p
         className={twMerge(
           "font-geist font-normal text-lg leading-snug text-purple",
+          className
+        )}
+      >
+        {children}
+      </p>
+    );
+  }
+
+  if (size === "medium") {
+    return (
+      <p
+        className={twMerge(
+          "font-geist font-normal text-base leading-tight text-purple",
           className
         )}
       >

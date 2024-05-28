@@ -12,7 +12,7 @@ type Props = {
 export default function SectionLabel({ children, captionClassName }: Props) {
   return (
     <div className={twMerge("flex gap-[0.35rem] items-center")}>
-      <DiamondIcon className={captionClassName} />
+      <DiamondIcon className={twMerge("text-lavender", captionClassName)} />
       <Caption className={twMerge("text-lavender", captionClassName)}>
         {children}
       </Caption>
