@@ -7,92 +7,67 @@ import React, {
 } from "react";
 
 type ScrollLockProps = {
-  durationPx: number; // The height the content should occupy when fixed.
-  render: (progress: number) => React.ReactNode; // Render prop to render content based on progress.
+  durationPx: number;
+  render: (progress: number) => React.ReactNode;
 };
 
 export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
   const [scrollY, setScrollY] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const placeholderRef = useRef<HTMLDivElement>(null);
-  const initialTopRef = useRef<number | null>(null); // Store the initial top offset here
+
+  const [top, setTop] = useState(0);
 
   const handleScroll = useCallback(() => {
     setScrollY(window.scrollY);
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Call the handler once to set the initial scroll position
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
-
-  useEffect(() => {
-    // Set initial top offset once when the component mounts
-    if (placeholderRef.current && initialTopRef.current === null) {
-      initialTopRef.current =
-        placeholderRef.current.offsetTop - window.innerHeight;
+  const handleResize = useCallback(() => {
+    if (placeholderRef.current) {
+      setTop(placeholderRef.current.offsetTop - window.innerHeight);
     }
   }, []);
 
   useEffect(() => {
-    const cb = () => {
-      if (initialTopRef.current !== null && placeholderRef.current) {
-        initialTopRef.current =
-          placeholderRef.current.offsetTop - window.innerHeight;
-      }
-    };
-    window.addEventListener("resize", cb);
-
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    handleScroll(); // Initialize scroll position
+    handleResize(); // Initialize resize handling
     return () => {
-      window.removeEventListener("resize", cb);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
-  }, [scrollY]);
+  }, [handleScroll, handleResize]);
 
   const progress = useMemo(() => {
-    if (initialTopRef.current !== null) {
-      if (scrollY < initialTopRef.current) {
-        return 0; // Before the fixed range starts
-      } else if (scrollY > initialTopRef.current + durationPx) {
-        return 100; // After the fixed range ends
-      } else {
-        // Calculate progress percentage within the fixed range
-        const progressWithinRange =
-          ((scrollY - initialTopRef.current) / durationPx) * 100;
-        return progressWithinRange;
-      }
-    }
-    return 0; // Default to 0 if no initial top is set
-  }, [scrollY, durationPx]);
+    const start = top;
+    const end = start + durationPx;
+    return scrollY < start
+      ? 0
+      : scrollY > end
+        ? 100
+        : ((scrollY - start) / durationPx) * 100;
+  }, [scrollY, durationPx, top]);
 
   const getStyle = useCallback(() => {
     if (progress > 0 && progress < 100) {
-      // When the scroll position is within the fixed range.
       return {
         position: "fixed" as const,
         top: 0,
         left: 0,
         width: "100%",
         height: "100vh",
-        zIndex: 10, // Ensure it stacks above other content.
+        zIndex: 10,
       };
     }
-    return {
-      position: "static" as const,
-      zIndex: 10,
-    };
+    return { position: "static" as const, zIndex: 10 };
   }, [progress]);
 
   return (
     <>
-      {/* Placeholder to maintain space when content is fixed */}
       <div ref={contentRef} style={getStyle()}>
         {render(progress)}
       </div>
-      {/* TODO: swap for a prop color */}
-
       <div
         className="bg-purple"
         ref={placeholderRef}
