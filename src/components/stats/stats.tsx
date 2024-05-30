@@ -1,3 +1,4 @@
+import { fetchStats } from "@/api/stats";
 import useAnimatedValue from "@/hooks/useAnimatedValue";
 
 // TODO: get from api
@@ -41,7 +42,9 @@ const stats: StatProps[] = [
   },
 ];
 
-export default function Stats() {
+export default async function Stats() {
+  const data = await fetchStats();
+  // TODO: finish
   return (
     <section className="bg-purple pt-11 pb-12">
       <div className="container mx-auto flex justify-between">

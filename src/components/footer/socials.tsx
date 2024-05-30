@@ -40,7 +40,7 @@ const socials = [
   },
 ];
 
-export default function FooterSocials() {
+export default function Socials() {
   return (
     <div className="flex gap-8">
       {socials.map((social) => (

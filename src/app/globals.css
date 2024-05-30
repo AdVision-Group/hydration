@@ -81,6 +81,14 @@ body {
   font-style: normal;
 }
 
+/* italic regular */
+@font-face {
+  font-family: "Gazpacho";
+  src: url("/font/gazpacho/Gazpacho-Italic-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
 @font-face {
   font-family: "Geist";
   font-style: normal;

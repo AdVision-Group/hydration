@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import FooterSocials from "../socials";
+import Socials from "../socials";
 import FooterLinks from "../links";
 
 const meta = {

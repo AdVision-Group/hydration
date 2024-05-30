@@ -1,7 +1,7 @@
 import Logo from "../icons/logo";
 import Paragraph from "../ui/typography/paragraph";
 import FooterLinks from "./links";
-import FooterSocials from "./socials";
+import Socials from "./socials";
 import SubscribeToNewsletter from "./subscribe";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-lavender">
       <div className="pt-16 grid grid-cols-2 grid-rows-3 gap-y-11 container mx-auto">
         <Logo size="large" />
-        <FooterSocials />
+        <Socials />
         <SubscribeToNewsletter />
         <FooterLinks />
         <RightsReserved />
