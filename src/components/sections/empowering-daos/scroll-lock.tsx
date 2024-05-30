@@ -44,6 +44,7 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Call the handler once to set the initial scroll position
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
