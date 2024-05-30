@@ -105,13 +105,14 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
         {render(progress)}
       </div>
       {/* TODO: swap for a prop color */}
-      {uncappedProgress > -10 && uncappedProgress < 40 && (
+      {/* {uncappedProgress > -10 && uncappedProgress < 40 && (
         <div className="fixed bg-purple h-[50vh] w-screen bottom-0 left-0 z-[5]"></div>
       )}
       {uncappedProgress < 110 && uncappedProgress > 60 && (
         <div className="fixed bg-purple h-[50vh] w-screen top-0 left-0 z-[5]"></div>
-      )}
+      )} */}
       <div
+        className="bg-purple"
         ref={placeholderRef}
         style={{ height: `calc(${durationPx}px  - 100vh)` }}
       />

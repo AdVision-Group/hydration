@@ -9,7 +9,7 @@ import CandlesticksIcon from "./assets/candlesticks.svg";
 
 export default function EffectiveTradingSection() {
   return (
-    <section className="bg-white pb-[7.5rem]">
+    <section className="bg-white pb-[7.5rem] pt-8">
       <div className="container mx-auto flex flex-col gap-5">
         <SectionLabel>Efficient Trading</SectionLabel>
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 ">
