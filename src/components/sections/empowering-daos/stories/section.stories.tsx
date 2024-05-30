@@ -10,13 +10,8 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => (
 );
 
 const meta = {
-  title: "UI/EmpoweringDaos",
-  component: () => (
-    <div className="bg-blue py-[100vh]">
-      <EmpoweringDaosSection />
-      <EffectiveTradingSection />
-    </div>
-  ),
+  title: "EmpoweringDaos",
+  component: () => <EmpoweringDaosSection />,
   parameters: {
     layout: "fullscreen",
   },

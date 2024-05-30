@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ScrollLockDemo from "../demo";
 
 const meta = {
-  title: "UI/EmpoweringDaos/ScrollLockDemo",
+  title: "EmpoweringDaos/ScrollLockDemo",
   component: ScrollLockDemo,
   parameters: {
     layout: "fullscreen",

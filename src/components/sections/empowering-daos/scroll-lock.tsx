@@ -11,27 +11,6 @@ type ScrollLockProps = {
   render: (progress: number) => React.ReactNode; // Render prop to render content based on progress.
 };
 
-// const useAnimationFrame = (callback: (deltaTime: number) => {}) => {
-//   // Use useRef for mutable variables that we want to persist
-//   // without triggering a re-render on their change
-//   const requestRef = React.useRef<any>();
-//   const previousTimeRef = React.useRef<any>();
-
-//   const animate = (time: number) => {
-//     if (previousTimeRef.current != undefined) {
-//       const deltaTime = time - previousTimeRef.current;
-//       callback(deltaTime);
-//     }
-//     previousTimeRef.current = time;
-//     requestRef.current = requestAnimationFrame(animate);
-//   };
-
-//   React.useEffect(() => {
-//     requestRef.current = requestAnimationFrame(animate);
-//     return () => cancelAnimationFrame(requestRef.current);
-//   }, []); // Make sure the effect runs only once
-// };
-
 export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
   const [scrollY, setScrollY] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -58,12 +37,19 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
     }
   }, []);
 
-  const uncappedProgress = useMemo(() => {
-    if (initialTopRef.current !== null) {
-      return ((scrollY - initialTopRef.current) / durationPx) * 100;
-    }
-    return -99999;
-  }, [scrollY, durationPx]);
+  useEffect(() => {
+    const cb = () => {
+      if (initialTopRef.current !== null && placeholderRef.current) {
+        initialTopRef.current =
+          placeholderRef.current.offsetTop - window.innerHeight;
+      }
+    };
+    window.addEventListener("resize", cb);
+
+    return () => {
+      window.removeEventListener("resize", cb);
+    };
+  }, [scrollY]);
 
   const progress = useMemo(() => {
     if (initialTopRef.current !== null) {
@@ -106,12 +92,7 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
         {render(progress)}
       </div>
       {/* TODO: swap for a prop color */}
-      {/* {uncappedProgress > -10 && uncappedProgress < 40 && (
-        <div className="fixed bg-purple h-[50vh] w-screen bottom-0 left-0 z-[5]"></div>
-      )}
-      {uncappedProgress < 110 && uncappedProgress > 60 && (
-        <div className="fixed bg-purple h-[50vh] w-screen top-0 left-0 z-[5]"></div>
-      )} */}
+
       <div
         className="bg-purple"
         ref={placeholderRef}
