@@ -1,3 +1,5 @@
+"use client";
+
 import SectionLabel from "@/components/ui/labels/section";
 import ScrollLock from "./scroll-lock";
 import Heading from "@/components/ui/typography/heading";

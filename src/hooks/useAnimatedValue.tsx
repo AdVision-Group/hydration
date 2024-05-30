@@ -6,11 +6,21 @@ type UseAnimatedValueParams = {
   duration: number;
 };
 
+function formatNumber(num: number): string {
+  if (num >= 1_000_000) {
+    return Math.round(num / 1_000_000) + "M";
+  } else if (num >= 10_000) {
+    return Math.round(num / 1_000) + "K";
+  } else {
+    return Math.round(num).toString();
+  }
+}
+
 const useAnimatedValue = ({
   initialValue,
   finalValue,
   duration,
-}: UseAnimatedValueParams): number => {
+}: UseAnimatedValueParams): string => {
   const [value, setValue] = useState<number>(initialValue);
   const requestRef = useRef<number>();
 
@@ -60,7 +70,7 @@ const useAnimatedValue = ({
     };
   }, [initialValue, finalValue, duration]);
 
-  return Math.round(value);
+  return formatNumber(value);
 };
 
 export default useAnimatedValue;

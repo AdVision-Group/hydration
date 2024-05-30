@@ -17,10 +17,8 @@ export default function HeroSection() {
       />
       <div className="container mx-auto flex justify-between relative">
         <HeroSectionContent />
-        <div className="absolute left-0 bottom-[2.375rem]">
+        <div className="absolute left-0 right-0 mx-auto container bottom-[2.375rem] flex justify-between">
           <Socials />
-        </div>
-        <div className="absolute right-0 bottom-[2.375rem]">
           <SupportingBadge />
         </div>
       </div>
