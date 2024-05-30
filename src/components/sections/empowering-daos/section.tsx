@@ -50,7 +50,7 @@ export default function EmpoweringDaosSection() {
       durationPx={2000}
       render={(progress) => (
         <section className="bg-purple w-full h-screen">
-          <div className="container py-[7.5rem] flex flex-col gap-[7.5rem] h-full">
+          <div className="container py-[7.5rem] flex flex-col gap-[7.5rem] h-full mx-auto">
             <div className="flex flex-col gap-4 h-full">
               <SectionLabel>Empowering DAOs</SectionLabel>
               <Heading size="medium" className="max-w-[1066px]">
