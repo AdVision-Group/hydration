@@ -13,7 +13,7 @@ import Stats from "@/components/stats/stats";
 
 export default function Home() {
   return (
-    <main className="bg-white-100">
+    <main className="bg-white-100 overflow-x-hidden">
       <Header className="fixed top-4 left-1/2 transform -translate-x-1/2 " />
       <HeroSection />
       <Stats />

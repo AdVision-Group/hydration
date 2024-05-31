@@ -24,7 +24,7 @@ export default function Heading({ children, className, size }: HeadingProps) {
     return (
       <h2
         className={twMerge(
-          "font-gazpacho font-medium text-5xl leading-tight text-purple",
+          "font-gazpacho font-medium ~text-3xl/5xl leading-tight text-purple",
           className
         )}
       >
@@ -36,7 +36,7 @@ export default function Heading({ children, className, size }: HeadingProps) {
   return (
     <h3
       className={twMerge(
-        "font-gazpacho font-bold text-4xl leading-tight text-purple",
+        "font-gazpacho font-bold ~text-3xl/4xl leading-tight text-purple",
         className
       )}
     >

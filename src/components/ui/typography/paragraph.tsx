@@ -15,7 +15,7 @@ export default function Paragraph({
     return (
       <p
         className={twMerge(
-          "font-geist font-normal text-lg leading-snug text-purple",
+          "font-geist font-normal ~text-base/lg leading-snug text-purple",
           className
         )}
       >

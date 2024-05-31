@@ -49,14 +49,14 @@ export default function EfficientTradingCard({
   return (
     <article
       className={twMerge(
-        "rounded-lg p-12 lg:h-[500px] xl:h-[441px]",
+        "rounded-lg ~p-3/12 lg:h-[500px] xl:h-[441px]",
         getColorClassName(theme),
         className
       )}
     >
       <div className="relative h-full w-full">
         <div className="flex flex-col gap-4 pb-10 lg:pb-0">
-          <Image src={icon.src} alt={icon.alt} width={56} height={56} />
+          <Image src={icon.src} alt={icon.alt} className="~w-12/14 ~h-12/14" />
           <Heading
             size="medium"
             className={theme === "purple" ? "text-lavender" : "text-purple"}

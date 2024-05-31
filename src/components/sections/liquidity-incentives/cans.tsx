@@ -9,8 +9,8 @@ import Image from "next/image";
 
 export default function LiquidityIncentivesCans() {
   return (
-    <div className="container flex justify-between mx-auto gap-12">
-      <div className="flex flex-col gap-2 pt-16 w-[50%]">
+    <div className="container flex flex-col-reverse lg:flex-row justify-between mx-auto ~gap-8/12">
+      <div className="flex flex-col gap-2 pt-16 lg:w-[50%]">
         <SectionLabel>Liquidity Incentives</SectionLabel>
         <div className="flex flex-col gap-8">
           <Heading size="large">
@@ -37,21 +37,20 @@ export default function LiquidityIncentivesCans() {
           </div>
         </div>
       </div>
-      <div className="relative w-[50%]">
+      {/* TODO: we are probably not going to use clamp here to get the animation right */}
+      <div className="relative lg:w-[50%] min-h-[250px]">
         <Image
-          className="absolute left-0 top-[110px] z-[5]"
+          className="absolute left-0 top-[110px] z-[5] ~w-[6.299rem]/[13.506rem] ~h-[10.919rem]/[23.409rem] rotate-[14.2deg]"
           src={CanHdx}
           alt="Can HDX"
         />
         <Image
-          className="absolute top-0 left-[84px]"
+          className="absolute top-0 left-[84px] ~w-[10.699rem]/[22.938rem] ~h-[10.699rem]/[22.938rem]"
           src={Star}
           alt="Star"
-          width={367}
-          height={367}
         />
         <Image
-          className="absolute right-0 top-10 z-[5]"
+          className="absolute right-0 top-10 z-[5] ~w-[6.5rem]/[13.938rem] ~h-[11.369rem]/[24.375rem] -rotate-[15deg]"
           src={CanPolkadot}
           alt="Can Polkadot"
         />

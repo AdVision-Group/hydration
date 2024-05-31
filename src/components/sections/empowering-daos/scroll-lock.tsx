@@ -32,12 +32,12 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
+    //  window.addEventListener("resize", handleResize);
     handleScroll(); // Initialize scroll position
     handleResize(); // Initialize resize handling
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
+      // window.removeEventListener("resize", handleResize);
     };
   }, [handleScroll, handleResize]);
 

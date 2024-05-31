@@ -1,25 +1,16 @@
+import { twMerge } from "tailwind-merge";
+
 type DiamondProps = {
   className?: string;
 };
 
 export default function DiamondIcon({ className }: DiamondProps) {
   return (
-    <svg
-      className={className}
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect
-        x="5.65674"
-        y="0.34314"
-        width="8"
-        height="8"
-        transform="rotate(45 5.65674 0.34314)"
-        fill="currentColor"
-      />
-    </svg>
+    <div
+      className={twMerge(
+        "~w-1.5/2 ~h-1.5/2 bg-lavender transform rotate-45",
+        className
+      )}
+    />
   );
 }

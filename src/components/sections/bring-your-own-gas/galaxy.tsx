@@ -16,16 +16,19 @@ import Heading from "@/components/ui/typography/heading";
 
 export default function Galaxy() {
   return (
-    <div className="w-[full] mx-auto max-w-[750px] aspect-square relative bg-white">
+    <div className="w-[110%] -ml-[5%] md:ml-auto md:w-[full] mx-auto max-w-[750px] aspect-square relative bg-white">
       <FirstRank />
       <SecondRank />
       <ThirdRank />
       <FourthRank />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-[500px] z-20">
-        <Heading className="text-center" size="medium">
+        <Heading className="~text-[1.5rem]/4xl text-center" size="medium">
           Bring your own gas
         </Heading>
-        <Heading className="text-center font-normal italic" size="medium">
+        <Heading
+          className="~text-[1.5rem]/4xl text-center font-normal italic"
+          size="medium"
+        >
           pay transaction fees using
           <br /> any supported asset
         </Heading>
@@ -175,7 +178,7 @@ function Orbit({
     >
       {element && (
         <div
-          className="absolute w-16 h-16 bg-blue rounded-full animate-counter-spin "
+          className="absolute ~w-[2rem]/[4rem] ~h-[2rem]/[4rem] bg-blue rounded-full animate-counter-spin "
           style={{
             // apply counter rotation to make the element appear stationary
             animationDuration: `${secondsPerSpin}s`,
@@ -187,9 +190,9 @@ function Orbit({
           <Image
             src={element.image}
             alt={element.alt}
-            width={64}
-            height={64}
-            className=""
+            // width={64}
+            // height={64}
+            className="~w-[2rem]/[4rem] ~h-[2rem]/[4rem]"
           />
         </div>
       )}

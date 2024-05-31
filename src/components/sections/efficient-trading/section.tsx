@@ -9,10 +9,10 @@ import CandlesticksIcon from "./assets/candlesticks.svg";
 
 export default function EffectiveTradingSection() {
   return (
-    <section className="bg-white pb-[7.5rem] pt-8">
-      <div className="container mx-auto flex flex-col gap-5">
+    <section className="bg-white ~pb-10/[7.5rem] pt-8">
+      <div className="container mx-auto flex flex-col ~gap-3/5">
         <SectionLabel>Efficient Trading</SectionLabel>
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 ">
+        <div className="grid grid-cols-1 lg:grid-cols-10 ~gap-4/8 ">
           <EfficientTradingCard
             title="Split your trades"
             description="No trade is too large for Hydration. Our user-friendly trading app will help you minimize slippage by allowing you to easily split your order in several consecutive trades."

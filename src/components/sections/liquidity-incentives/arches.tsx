@@ -4,7 +4,7 @@ import LendingArchIcon from "./arch-icon/lending-icon";
 
 export default function LiquidityIncentivesArches() {
   return (
-    <div className="container mx-auto relative flex justify-between gap-8">
+    <div className="container mx-auto relative flex flex-col lg:flex-row justify-between gap-8">
       <Arch
         empty={false}
         title="Lending & Borrowing"
@@ -17,10 +17,13 @@ export default function LiquidityIncentivesArches() {
         description="The future deserves the HOLLAR - a decentralized, over-collateralized digital currency designed to be price-stable."
         Icon={<HollarArchIcon />}
       />
-      <Arch empty={true} className="absolute top-0 right-[calc(100%_-_32px)]" />
       <Arch
         empty={true}
-        className="absolute bottom-0 left-[calc(100%_-_32px)]"
+        className="absolute top-0 right-[calc(100%_-_32px)] hidden lg:block"
+      />
+      <Arch
+        empty={true}
+        className="absolute bottom-0 left-[calc(100%_-_32px)] hidden lg:block"
       />
     </div>
   );

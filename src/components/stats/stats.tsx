@@ -14,6 +14,7 @@ export default async function Stats() {
     },
     {
       title: "Trading volume",
+      mobileTitle: "Trading vol.",
       value: {
         value: data.vol_30d,
         prefix: "$",
@@ -27,6 +28,7 @@ export default async function Stats() {
         prefix: "$",
       },
       tagline: "Last 30D",
+      className: "order-1 lg:order-none col-span-2",
     },
     {
       title: "Tradable assets",
@@ -44,7 +46,7 @@ export default async function Stats() {
 
   return (
     <section className="bg-purple pt-11 pb-12">
-      <div className="container mx-auto flex justify-between">
+      <div className="container mx-auto grid grid-cols-2 lg:flex justify-between flex-wrap lg:gap-8 gap-2 gap-y-8">
         {stats.map((stat) => (
           <Stat key={stat.title} {...stat} />
         ))}

@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Diamond from "./assets/diamond.svg";
 import Caption from "../typography/caption";
 import { twMerge } from "tailwind-merge";
 import DiamondIcon from "./icons/diamond";
@@ -11,9 +9,11 @@ type Props = {
 
 export default function SectionLabel({ children, captionClassName }: Props) {
   return (
-    <div className={twMerge("flex gap-[0.35rem] items-center")}>
+    <div className={twMerge("flex ~gap-1.5/2 items-center")}>
       <DiamondIcon className={twMerge("text-lavender", captionClassName)} />
-      <Caption className={twMerge("text-lavender", captionClassName)}>
+      <Caption
+        className={twMerge("text-lavender ~text-sm/base", captionClassName)}
+      >
         {children}
       </Caption>
     </div>
