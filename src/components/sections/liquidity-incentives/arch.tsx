@@ -21,10 +21,7 @@ type ArchProps =
 export default function Arch(props: ArchProps) {
   return (
     <div
-      className={twMerge(
-        "relative pb-[3.75rem] lg:w-[584px] lg:h-[705px]",
-        props.className
-      )}
+      className={twMerge("relative lg:w-[584px] lg:h-[705px]", props.className)}
     >
       <Image
         src={ArchBackground}
@@ -34,7 +31,7 @@ export default function Arch(props: ArchProps) {
         objectFit="contain"
       />
       {!props.empty && (
-        <div className="flex flex-col ~gap-8/16 justify-center items-center text-center p-4">
+        <div className="flex flex-col ~gap-8/16 justify-center items-center text-center p-12 lg:p-0">
           <div className="~w-[8.75rem]/[16.25rem] mx-auto pt-20 z-10">
             {props.Icon}
           </div>
