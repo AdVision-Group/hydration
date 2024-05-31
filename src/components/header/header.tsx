@@ -41,7 +41,7 @@ export type HeaderProps = {
 export default function Header({ className }: HeaderProps) {
   return (
     <header
-      className={twMerge("z-20 mx-auto w-full flex justify-center ", className)}
+      className={twMerge("z-40 mx-auto w-full flex justify-center ", className)}
     >
       <div className="py-2 xl:py-1 bg-beige px-4 xl:pr-1 xl:rounded-xl xl:mx-10 xl:max-w-[1352px] w-full">
         <div className="flex items-center justify-between xl:max-w-[none]">

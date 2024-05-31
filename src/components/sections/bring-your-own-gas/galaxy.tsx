@@ -12,6 +12,7 @@ import EthereumIcon from "./assets/ethereum.svg";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { twMerge } from "tailwind-merge";
+import Heading from "@/components/ui/typography/heading";
 
 export default function Galaxy() {
   return (
@@ -20,6 +21,15 @@ export default function Galaxy() {
       <SecondRank />
       <ThirdRank />
       <FourthRank />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-[500px] z-20">
+        <Heading className="text-center" size="medium">
+          Bring your own gas
+        </Heading>
+        <Heading className="text-center font-normal italic" size="medium">
+          pay transaction fees using
+          <br /> any supported asset
+        </Heading>
+      </div>
     </div>
   );
 }
@@ -38,7 +48,11 @@ function FirstRank() {
 
   return (
     <>
-      <Orbit size={size} secondsPerSpin={secondsPerSpin} borderOpacity={0.1} />
+      <Orbit
+        size={size}
+        secondsPerSpin={secondsPerSpin}
+        className="border border-[#DFB1F340]"
+      />
       {elements.map((element) => (
         <Orbit
           key={element.alt}
@@ -64,7 +78,11 @@ function SecondRank() {
 
   return (
     <>
-      <Orbit size={size} secondsPerSpin={secondsPerSpin} borderOpacity={0.1} />
+      <Orbit
+        size={size}
+        secondsPerSpin={secondsPerSpin}
+        className="border border-[#DFB1F380]"
+      />
       {elements.map((element) => (
         <Orbit
           key={element.alt}
@@ -86,7 +104,11 @@ function ThirdRank() {
 
   return (
     <>
-      <Orbit size={size} secondsPerSpin={secondsPerSpin} borderOpacity={0.1} />
+      <Orbit
+        size={size}
+        secondsPerSpin={secondsPerSpin}
+        className="border border-[#DFB1F3BF]"
+      />
       {elements.map((element) => (
         <Orbit
           key={element.alt}
@@ -106,7 +128,11 @@ function FourthRank() {
 
   return (
     <>
-      <Orbit size={size} secondsPerSpin={secondsPerSpin} borderOpacity={0.1} />
+      <Orbit
+        size={size}
+        secondsPerSpin={secondsPerSpin}
+        className="border border-lavender"
+      />
     </>
   );
 }
@@ -129,7 +155,6 @@ function Orbit({
   offsetPercentage = 0,
   element,
   className,
-  borderOpacity = 0,
 }: OrbitProps) {
   const pos = `${(size - 30) / 12 + 5}%`;
   return (
@@ -146,7 +171,6 @@ function Orbit({
         top: `calc(50% - ${size}% / 2)`,
         animationDuration: `${secondsPerSpin}s`,
         animationDelay: `-${secondsPerSpin * (offsetPercentage / 100)}s`,
-        border: `1px solid rgba(36, 14, 50, ${borderOpacity})`,
       }}
     >
       {element && (

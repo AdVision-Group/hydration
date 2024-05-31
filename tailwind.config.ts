@@ -28,7 +28,10 @@ const config: Config = {
     },
     screens,
     colors: {
-      white: "#FFFFFF",
+      white: {
+        DEFAULT: "#FFFFFF",
+        100: "#FFFFFB",
+      },
       beige: "#F6F6EC",
       pink: "#E53E76",
       lavender: {

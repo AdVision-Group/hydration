@@ -15,7 +15,7 @@ export function Stat({ title, value, tagline, animated = true }: StatProps) {
   const animatedValue = useAnimatedValue({
     initialValue: 0,
     finalValue: value.value,
-    duration: 4000,
+    duration: 2000,
   });
   return (
     <div className="flex flex-col gap-2">

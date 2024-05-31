@@ -1,15 +1,20 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Galaxy from "./galaxy";
+import LiquidityIncentivesCans from "../cans";
 
 const meta = {
-  title: "BringYourGas/Galaxy",
-  component: Galaxy,
+  title: "LiquidityIncentives/Cans",
+  component: LiquidityIncentivesCans,
+  decorators: (Story) => (
+    <div className=" bg-beige pb-40">
+      <Story />
+    </div>
+  ),
   parameters: {
-    layout: "fulscreen",
+    layout: "fullscreen",
   },
 
   tags: ["autodocs"],
-} satisfies Meta<typeof Galaxy>;
+} satisfies Meta<typeof LiquidityIncentivesCans>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

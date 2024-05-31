@@ -1,6 +1,7 @@
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
-import Galaxy from "@/components/sections/bring-your-gas/galaxy";
+import Galaxy from "@/components/sections/bring-your-own-gas/galaxy";
+import BringYourOwnGasSection from "@/components/sections/bring-your-own-gas/section";
 import BuiltToBeUnstoppableSection from "@/components/sections/built-to-be-unstoppable/section";
 import DevsAndSecuritySection from "@/components/sections/devs-and-security/section";
 import EffectiveTradingSection from "@/components/sections/efficient-trading/section";
@@ -14,7 +15,7 @@ export default function Home() {
       <Header className="fixed top-4 left-1/2 transform -translate-x-1/2 " />
       <HeroSection />
       <Stats />
-      {/* <Galaxy /> */}
+      <BringYourOwnGasSection />
       <EffectiveTradingSection />
       <BuiltToBeUnstoppableSection />
       <EmpoweringDaosSection />
