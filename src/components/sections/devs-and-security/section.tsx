@@ -44,21 +44,21 @@ export default function DevsAndSecuritySection() {
         alt="Pool"
         objectFit="cover"
         layout="fill"
-        className="-z-10"
+        className="z-[5]"
       />
-      <div className="pt-[16.938rem] flex gap-6 container z-0 flex-col mx-auto items-center max-w-[550px]">
+      <div className="pt-[16.938rem] flex gap-6 container flex-col mx-auto items-center max-w-[550px] relative z-10">
         <SectionLabel captionClassName="text-blue">
           Developers and Security
         </SectionLabel>
         <Heading className="text-center text-white" size="large">
           Help build the <br /> future of finance
         </Heading>
-        <Paragraph size="large" className="text-white">
+        <Paragraph size="large" className="text-white text-center">
           Hydration provides the liquidity layer which empowers developers to
           build the financial apps of tomorrow.
         </Paragraph>
       </div>
-      <div className="pt-[4.375rem] pb-[16.938rem] flex flex-col gap-4 items-center">
+      <div className="pt-[4.375rem] pb-[16.938rem] flex flex-col gap-4 items-center z-10 relative">
         {items.map((item) => (
           <DevsAndSecurityItem key={item.title} {...item} />
         ))}

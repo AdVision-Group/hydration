@@ -2,7 +2,7 @@ import Arch from "./arch";
 import HollarArchIcon from "./arch-icon/hollar-icon";
 import LendingArchIcon from "./arch-icon/lending-icon";
 
-export default function Arches() {
+export default function LiquidityIncentivesArches() {
   return (
     <div className="container mx-auto relative flex justify-between gap-8">
       <Arch

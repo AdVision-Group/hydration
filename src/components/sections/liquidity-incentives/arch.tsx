@@ -22,21 +22,21 @@ export default function Arch(props: ArchProps) {
   return (
     <div
       className={twMerge(
-        "aspect-[584/705] relative pb-[3.75rem w-[584px]",
+        "relative pb-[3.75rem w-[584px] h-[705px]",
         props.className
       )}
     >
       <Image
         src={ArchBackground}
-        className="-z-[5]"
+        className="z-[5]"
         alt="Arch"
         layout="fill"
         objectFit="cover"
       />
       {!props.empty && (
         <div className="flex flex-col gap-16 justify-center items-center text-center">
-          <div className="w-[260px] mx-auto pt-20">{props.Icon}</div>
-          <div className="flex flex-col gap-8 max-w-[415px] mx-8">
+          <div className="w-[260px] mx-auto pt-20 z-10">{props.Icon}</div>
+          <div className="flex flex-col gap-8 max-w-[415px] mx-8 z-10">
             <Heading size="large" className="text-purple">
               {props.title}
             </Heading>

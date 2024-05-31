@@ -59,7 +59,7 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
         left: 0,
         width: "100%",
         height: "100vh",
-        zIndex: 10,
+        zIndex: 25,
       };
     }
     return { position: "static" as const, zIndex: 10 };
@@ -75,7 +75,7 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
         ref={placeholderRef}
         style={{ height: `calc(${durationPx}px  - 100vh)` }}
       />
-      <div className="z-[9]">{render(100)}</div>
+      <div className="z-[15]">{render(100)}</div>
     </>
   );
 }

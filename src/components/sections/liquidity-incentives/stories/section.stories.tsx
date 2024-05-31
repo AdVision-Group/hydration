@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import LiquidityIncentivesArches from "../arches";
+import LiquidityIncentivesSection from "../section";
 
 const meta = {
-  title: "LiquidityIncentives/Arches",
-  component: LiquidityIncentivesArches,
+  title: "LiquidityIncentives",
+  component: LiquidityIncentivesSection,
   parameters: {
     layout: "fullscreen",
   },
 
   tags: ["autodocs"],
-} satisfies Meta<typeof LiquidityIncentivesArches>;
+} satisfies Meta<typeof LiquidityIncentivesSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -13,9 +13,9 @@ export default function HeroSection() {
         alt="Pool"
         objectFit="cover"
         layout="fill"
-        className="-z-10"
+        className="z-[5]"
       />
-      <div className="container mx-auto flex justify-between relative">
+      <div className="container mx-auto flex justify-between relative z-10">
         <HeroSectionContent />
         <div className="absolute left-0 right-0 mx-auto container bottom-[2.375rem] flex justify-between">
           <Socials />
