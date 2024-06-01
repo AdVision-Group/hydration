@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { twMerge } from "tailwind-merge";
 
 const linkColums: LinkColumnProps[] = [
   {
@@ -46,9 +47,15 @@ const linkColums: LinkColumnProps[] = [
   },
 ];
 
-export default function FooterLinks() {
+type FooterLinksProps = {
+  className?: string;
+};
+
+export default function FooterLinks({ className }: FooterLinksProps) {
   return (
-    <div className="grid grid-cols-3">
+    <div
+      className={twMerge("grid sm:grid-cols-3 grid-cols-2 gap-y-12", className)}
+    >
       {linkColums.map((column) => (
         <LinkColumn key={column.title} {...column} />
       ))}

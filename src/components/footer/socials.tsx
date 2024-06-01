@@ -6,6 +6,7 @@ import GithubLogo from "./assets/github.svg";
 import SubstackLogo from "./assets/substack.svg";
 import Link from "next/link";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
 const socials = [
   {
@@ -40,9 +41,13 @@ const socials = [
   },
 ];
 
-export default function Socials() {
+type Props = {
+  className?: string;
+};
+
+export default function Socials({ className }: Props) {
   return (
-    <div className="flex gap-8">
+    <div className={twMerge("flex gap-8", className)}>
       {socials.map((social) => (
         <Link
           key={social.name}

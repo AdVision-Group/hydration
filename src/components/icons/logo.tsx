@@ -1,8 +1,9 @@
 type Props = {
   size: "small" | "large";
+  className?: string;
 };
 
-export default function Logo({ size }: Props) {
+export default function Logo({ size, className }: Props) {
   const width = size === "small" ? 169 : 252;
   const height = size === "small" ? 33.66 : 50;
 
@@ -12,6 +13,7 @@ export default function Logo({ size }: Props) {
       height={height}
       viewBox="0 0 252 50"
       fill="none"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clip-path="url(#clip0_1241_1781)">
