@@ -4,7 +4,7 @@ import PolkadotLogo from "./assets/polkadot.svg";
 
 export default function SecuredByBadge() {
   return (
-    <Badge>
+    <Badge className="bg-transparent px-0">
       Secured by
       <Image className="py-2.5" src={PolkadotLogo} alt="polkadot logo" />
     </Badge>
