@@ -9,7 +9,6 @@ export default function EmpoweringDaosSection() {
   // on mobile devices
 
   const { width } = useScreenSize();
-  console.log(width);
   const isMobile = width < 1024;
 
   return isMobile ? (
