@@ -14,12 +14,14 @@ export default function DevsAndSecurityItem({
   icon: Icon,
 }: DevsAndSecurityItemProps) {
   return (
-    <div className="flex gap-5 p-2 bg-white rounded-md border border-blue group">
-      <div className="rounded-sm bg-white shadow-blue-inset w-[4.875rem] h-[6.125rem] flex justify-center items-center">
+    <div className="flex justify-between gap-5 p-2 bg-white rounded-md border border-blue group">
+      <div className="rounded-sm bg-white shadow-blue-inset min-w-[4.875rem] w-[4.875rem] md:h-[6.125rem] flex justify-center items-center">
         <Icon className="transition-all text-blue group-hover:text-purple" />
       </div>
-      <div className="flex flex-col gap-4 max-w-[351px]">
-        <Title size="small">{title}</Title>
+      <div className="flex flex-col ~gap-3/4 max-w-[351px]">
+        <Title size="small" className="font-geist md:font-gazpacho">
+          {title}
+        </Title>
         <Paragraph className="text-purple-dim" size="small">
           {description}
         </Paragraph>

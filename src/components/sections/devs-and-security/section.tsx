@@ -38,27 +38,31 @@ const items: DevsAndSecurityItemProps[] = [
 
 export default function DevsAndSecuritySection() {
   return (
-    <section className="relative w-full">
-      <Image
+    <section
+      className="relative w-full overflow-hidden bg-[length:auto_120%] md:bg-[length:auto_100%] bg-[center_calc(30%)] md:bg-[center_top] "
+      style={{
+        backgroundImage: `url(${PoolImage.src})`,
+      }}
+    >
+      {/* <Image
         src={PoolImage}
         alt="Pool"
-        objectFit="cover"
-        layout="fill"
-        className="z-[5]"
-      />
-      <div className="pt-[16.938rem] flex gap-6 container flex-col mx-auto items-center max-w-[550px] relative z-10">
-        <SectionLabel captionClassName="text-blue">
+        //   objectFit="cover"
+        className="-translate-y-10 h-[110%] top-0 bottom-0 absolute object-center w-[180%] -translate-x-[20%] max-w-none"
+      /> */}
+      <div className="~pt-[4rem]/[16.938rem] flex ~gap-8/6 container flex-col mx-auto items-center max-w-[550px] relative z-10">
+        <SectionLabel captionClassName="text-blue" iconClassName="bg-blue">
           Developers and Security
         </SectionLabel>
         <Heading className="text-center text-white" size="large">
-          Help build the <br /> future of finance
+          Help build the <br className="hidden lg:inline" /> future of finance
         </Heading>
         <Paragraph size="large" className="text-white text-center">
           Hydration provides the liquidity layer which empowers developers to
           build the financial apps of tomorrow.
         </Paragraph>
       </div>
-      <div className="pt-[4.375rem] pb-[16.938rem] flex flex-col gap-4 items-center z-10 relative">
+      <div className="~pt-8/16 ~pb-16/[16.938rem] flex flex-col gap-4 items-center z-10 relative container">
         {items.map((item) => (
           <DevsAndSecurityItem key={item.title} {...item} />
         ))}
