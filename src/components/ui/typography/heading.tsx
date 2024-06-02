@@ -11,7 +11,7 @@ export default function Heading({ children, className, size }: HeadingProps) {
     return (
       <h4
         className={twMerge(
-          "font-gazpacho font-medium text-3xl leading-tight text-purple",
+          "font-gazpacho font-medium ~text-2xl/3xl leading-tight text-purple",
           className
         )}
       >

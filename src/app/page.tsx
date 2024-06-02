@@ -1,6 +1,5 @@
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
-import Galaxy from "@/components/sections/bring-your-own-gas/galaxy";
 import BringYourOwnGasSection from "@/components/sections/bring-your-own-gas/section";
 import BuiltToBeUnstoppableSection from "@/components/sections/built-to-be-unstoppable/section";
 import DevsAndSecuritySection from "@/components/sections/devs-and-security/section";
@@ -14,7 +13,7 @@ import Stats from "@/components/stats/stats";
 export default function Home() {
   return (
     <main className="bg-white-100 overflow-x-hidden">
-      <Header className="fixed top-4 left-1/2 transform -translate-x-1/2 " />
+      <Header className="fixed top-0 lg:top-4 left-1/2 transform -translate-x-1/2 " />
       <HeroSection />
       <Stats />
       <BringYourOwnGasSection />
