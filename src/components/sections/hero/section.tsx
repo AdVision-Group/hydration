@@ -28,7 +28,7 @@ export default function HeroSection() {
 
 function HeroSectionContent() {
   return (
-    <div className="flex flex-col justify-center items-center w-[430px] mx-auto pt-[15.938rem] pb-[13.438rem] lg:pb-[11.625rem] gap-8">
+    <div className="flex flex-col justify-center items-center w-[430px] mx-auto ~pt-[10.5rem]/[15.938rem] pb-[13.438rem] lg:pb-[11.625rem] gap-8">
       <h1 className="font-gazpacho w-full">
         <span className="block ~text-[4.375rem]/[5.315rem] text-purple text-center font-medium ~leading-[3.969rem]/[4.76rem]">
           Finance
