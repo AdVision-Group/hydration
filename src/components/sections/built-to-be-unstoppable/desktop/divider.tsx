@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Logo from "./assets/logo.svg";
+import Logo from "../assets/logo.svg";
 
 export default function Divider() {
   return (
-    <div className="h-[2px] bg-pink relative">
+    <div className="h-[2px] bg-[#E53E7640] relative">
       {/* Align to the middle of the line */}
       <Image
         src={Logo}

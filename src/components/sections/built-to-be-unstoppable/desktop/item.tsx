@@ -18,7 +18,7 @@ export default function Item({ align, title, description }: ItemProps) {
     >
       <div
         className={twMerge(
-          "h-[111px] border-pink mb-[0.875]",
+          "h-[111px] border-[#E53E7640] mb-[0.875rem]",
           align === "left" ? "border-l-2" : "border-r-2"
         )}
       />

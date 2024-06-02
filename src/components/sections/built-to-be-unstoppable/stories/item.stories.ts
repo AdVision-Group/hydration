@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Item from "../item";
+import Item from "../desktop/item";
 
 const meta = {
   title: "BuiltToBeUnstoppable/Item",

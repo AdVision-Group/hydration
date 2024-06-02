@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Divider from "../divider";
+import Divider from "../desktop/divider";
 
 const meta = {
   title: "BuiltToBeUnstoppable/Divider",

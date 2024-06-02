@@ -32,10 +32,10 @@ export default function Arch(props: ArchProps) {
       />
       {!props.empty && (
         <div className="flex flex-col ~gap-8/16 justify-center items-center text-center p-12 lg:p-0">
-          <div className="~w-[8.75rem]/[16.25rem] mx-auto pt-20 z-10">
+          <div className="~w-[8.75rem]/[16.25rem] mx-auto pt-0 lg:pt-20 z-10">
             {props.Icon}
           </div>
-          <div className="flex flex-col gap-8 max-w-[415px] lg:mx-8 z-10">
+          <div className="flex flex-col gap-8 max-w-[300px] lg:max-w-[415px] lg:mx-8 z-10">
             <Heading size="large" className="text-purple">
               {props.title}
             </Heading>
