@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Badge from "./badge";
 
@@ -6,11 +8,16 @@ import NovaLogo from "./assets/nova.png";
 import SubwalletLogo from "./assets/subwallet.svg";
 import TalismanLogo from "./assets/talisman.svg";
 
+import { motion } from "framer-motion";
+import { fadeIn, fadeUp } from "@/animation/variants";
+
 export default function SupportingBadge() {
   return (
-    <Badge className="pr-1">
-      Supporting <Icons />
-    </Badge>
+    <motion.div variants={fadeUp()}>
+      <Badge className="pr-1">
+        Supporting <Icons />
+      </Badge>
+    </motion.div>
   );
 }
 

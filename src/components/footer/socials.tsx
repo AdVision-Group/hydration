@@ -1,3 +1,5 @@
+"use client";
+
 import MediumLogo from "./assets/medium.svg";
 import TwitterLogo from "./assets/twitter.svg";
 import DiscordLogo from "./assets/discord.svg";
@@ -7,6 +9,8 @@ import SubstackLogo from "./assets/substack.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/animation/variants";
 
 const socials = [
   {
@@ -47,7 +51,10 @@ type Props = {
 
 export default function Socials({ className }: Props) {
   return (
-    <div className={twMerge("flex gap-8", className)}>
+    <motion.div
+      className={twMerge("flex gap-8", className)}
+      variants={fadeUp()}
+    >
       {socials.map((social) => (
         <Link
           key={social.name}
@@ -58,6 +65,6 @@ export default function Socials({ className }: Props) {
           <Image src={social.logo} alt={social.name} width={28} height={28} />
         </Link>
       ))}
-    </div>
+    </motion.div>
   );
 }

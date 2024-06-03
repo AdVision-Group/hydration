@@ -13,27 +13,45 @@ import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { twMerge } from "tailwind-merge";
 import Heading from "@/components/ui/typography/heading";
+import { motion } from "framer-motion";
+import { fadeUp, none, scaleUp, staggerChildren } from "@/animation/variants";
 
 export default function Galaxy() {
   return (
-    <div className="w-[110%] -ml-[5%] md:ml-auto md:w-[full] mx-auto max-w-[750px] aspect-square relative bg-white">
+    <motion.div
+      className="w-[110%] -ml-[5%] md:ml-auto md:w-[full] mx-auto max-w-[750px] aspect-square relative bg-white"
+      variants={scaleUp()}
+    >
       <FirstRank />
       <SecondRank />
       <ThirdRank />
       <FourthRank />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-[500px] z-20">
-        <Heading className="~text-[1.5rem]/4xl text-center" size="medium">
-          Bring your own gas
-        </Heading>
-        <Heading
-          className="~text-[1.5rem]/4xl text-center font-normal italic"
-          size="medium"
-        >
-          pay transaction fees using
-          <br /> any supported asset
-        </Heading>
+        <motion.div variants={fadeUp()}>
+          <Heading
+            className="~text-[1.5rem]/4xl text-center"
+            size="medium"
+            animationVariants={none()}
+          >
+            Bring your own gas
+          </Heading>
+          <Heading
+            className="~text-[1.5rem]/4xl text-center font-normal italic"
+            size="medium"
+            animationVariants={none()}
+          >
+            pay transaction fees using
+          </Heading>
+          <Heading
+            className="~text-[1.5rem]/4xl text-center font-normal italic"
+            size="medium"
+            animationVariants={none()}
+          >
+            any supported asset
+          </Heading>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

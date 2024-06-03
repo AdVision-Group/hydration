@@ -15,9 +15,8 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
 
   const [top, setTop] = useState(0);
 
-  useResize(({ width, height }) => {
+  useResize(({ height }) => {
     if (placeholderRef.current) {
-      console.log(placeholderRef.current.offsetTop);
       setTop(placeholderRef.current.offsetTop - height);
     }
   });

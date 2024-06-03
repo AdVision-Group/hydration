@@ -1,8 +1,12 @@
+"use client";
+
 import Arrow from "@/components/icons/arrow";
 import Star from "@/components/icons/star";
 import Link from "next/link";
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/animation/variants";
 
 type ButtonAction =
   | {
@@ -67,18 +71,20 @@ export default function Button({
 }: ButtonProps) {
   const colorClassName = getButtonStyles(role, fill);
   return (
-    <ButtonWrapper action={action}>
-      <button
-        className={twMerge(
-          colorClassName,
-          "cursor-pointer rounded-xl px-5 py-3 font-geist text-base leading-6 font-normal transition",
-          className
-        )}
-        disabled={disabled}
-      >
-        <ButtonContent decoration={decoration}>{children}</ButtonContent>
-      </button>
-    </ButtonWrapper>
+    <motion.div variants={fadeUp()}>
+      <ButtonWrapper action={action}>
+        <button
+          className={twMerge(
+            colorClassName,
+            "cursor-pointer rounded-xl px-5 py-3 font-geist text-base leading-6 font-normal transition",
+            className
+          )}
+          disabled={disabled}
+        >
+          <ButtonContent decoration={decoration}>{children}</ButtonContent>
+        </button>
+      </ButtonWrapper>
+    </motion.div>
   );
 }
 

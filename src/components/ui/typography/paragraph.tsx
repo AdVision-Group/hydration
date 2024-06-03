@@ -1,4 +1,8 @@
+"use client";
+
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/animation/variants";
 
 type ParagraphProps = {
   children: React.ReactNode;
@@ -13,38 +17,41 @@ export default function Paragraph({
 }: ParagraphProps) {
   if (size === "large") {
     return (
-      <p
+      <motion.p
         className={twMerge(
           "font-geist font-normal ~text-base/lg leading-snug text-purple",
           className
         )}
+        variants={fadeUp()}
       >
         {children}
-      </p>
+      </motion.p>
     );
   }
 
   if (size === "medium") {
     return (
-      <p
+      <motion.p
         className={twMerge(
           "font-geist font-normal text-base leading-tight text-purple",
           className
         )}
+        variants={fadeUp()}
       >
         {children}
-      </p>
+      </motion.p>
     );
   }
 
   return (
-    <p
+    <motion.p
       className={twMerge(
         "font-geist font-normal text-sm leading-tight text-purple",
         className
       )}
+      variants={fadeUp()}
     >
       {children}
-    </p>
+    </motion.p>
   );
 }

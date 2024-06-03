@@ -1,12 +1,24 @@
+"use client";
+
 import { twMerge } from "tailwind-merge";
+import LetterByLetter from "@/components/animation/LetterByLetter";
+import { ReactNode } from "react";
+import { Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 type HeadingProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
+  animationVariants?: Variants;
   size: "small" | "medium" | "large";
 };
 
-export default function Heading({ children, className, size }: HeadingProps) {
+export default function Heading({
+  children,
+  className,
+  size,
+  animationVariants,
+}: HeadingProps) {
   if (size === "small") {
     return (
       <h4
@@ -15,7 +27,11 @@ export default function Heading({ children, className, size }: HeadingProps) {
           className
         )}
       >
-        {children}
+        {animationVariants ? (
+          <motion.div variants={animationVariants}>{children}</motion.div>
+        ) : (
+          <LetterByLetter>{children}</LetterByLetter>
+        )}
       </h4>
     );
   }
@@ -28,7 +44,11 @@ export default function Heading({ children, className, size }: HeadingProps) {
           className
         )}
       >
-        {children}
+        {animationVariants ? (
+          <motion.div variants={animationVariants}>{children}</motion.div>
+        ) : (
+          <LetterByLetter>{children}</LetterByLetter>
+        )}
       </h2>
     );
   }
@@ -40,7 +60,11 @@ export default function Heading({ children, className, size }: HeadingProps) {
         className
       )}
     >
-      {children}
+      {animationVariants ? (
+        <motion.div variants={animationVariants}>{children}</motion.div>
+      ) : (
+        <LetterByLetter>{children}</LetterByLetter>
+      )}
     </h3>
   );
 }
