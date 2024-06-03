@@ -9,8 +9,8 @@ import Image from "next/image";
 
 export default function LiquidityIncentivesCans() {
   return (
-    <div className="container flex flex-col-reverse lg:flex-row justify-between mx-auto ~gap-8/12">
-      <div className="flex flex-col gap-2 pt-16 lg:w-[50%]">
+    <div className="flex flex-col-reverse lg:flex-row justify-between ~gap-8/12 ~pb-[5.438rem]/40 bg-beige-20-to-transparent-40 lg:bg-none">
+      <div className="flex flex-col gap-2 pt-16 lg:w-[50%] container mx-auto">
         <SectionLabel>Liquidity Incentives</SectionLabel>
         <div className="flex flex-col gap-8">
           <Heading size="large">
@@ -38,7 +38,7 @@ export default function LiquidityIncentivesCans() {
         </div>
       </div>
       {/* TODO: we are probably not going to use clamp here to get the animation right */}
-      <div className="relative lg:w-[50%] min-h-[250px]">
+      <div className="relative lg:w-[50%] min-h-[250px] container mx-auto">
         <Image
           className="absolute left-0 top-[110px] z-[5] ~w-[6.299rem]/[13.506rem] ~h-[10.919rem]/[23.409rem] rotate-[14.2deg]"
           src={CanHdx}

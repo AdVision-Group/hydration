@@ -13,9 +13,11 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "beige-80-to-transparent-100":
+          "linear-gradient(to top, #F6F6EC 0%, #F6F6EC 80%, transparent 100%)",
+        none: "none",
+        "beige-20-to-transparent-40":
+          "linear-gradient(to top, #F6F6EC 0%, #F6F6EC 20%, transparent 40%)",
       },
       fontSize: {
         "2xs": "0.625rem",

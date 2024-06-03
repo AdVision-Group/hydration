@@ -5,7 +5,7 @@ import Paragraph from "@/components/ui/typography/paragraph";
 
 export default function ReferralsSection() {
   return (
-    <section className="bg-beige pb-[6.563rem] rounded-b-[4rem] pt-10">
+    <section className="bg-beige pb-[6.563rem] rounded-b-[4rem] ~pt-24/36">
       <div className="container mx-auto">
         <div className="max-w-[650px] mx-auto flex flex-col gap-8 items-center justify-center text-center">
           <div className="flex flex-col items-center gap-2">
