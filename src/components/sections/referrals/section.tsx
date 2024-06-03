@@ -2,12 +2,14 @@ import Button from "@/components/ui/buttons/button";
 import SectionLabel from "@/components/ui/labels/section";
 import Heading from "@/components/ui/typography/heading";
 import Paragraph from "@/components/ui/typography/paragraph";
+import Image from "next/image";
+import StarAsset from "./assets/star.svg";
 
 export default function ReferralsSection() {
   return (
-    <section className="bg-beige pb-[6.563rem] rounded-b-[4rem] ~pt-24/36">
-      <div className="container mx-auto">
-        <div className="max-w-[650px] mx-auto flex flex-col gap-8 items-center justify-center text-center">
+    <section className="bg-beige pb-[6.563rem] rounded-b-[4rem] ">
+      <div className="container mx-auto relative">
+        <div className="max-w-[650px] mx-auto flex flex-col gap-8 items-center justify-center text-center relative z-[2]">
           <div className="flex flex-col items-center gap-2">
             <SectionLabel>Referrals</SectionLabel>
             <Heading size="medium">Refer traders and earn rewards</Heading>
@@ -21,7 +23,58 @@ export default function ReferralsSection() {
             Get Your Referral Code
           </Button>
         </div>
+        <Stars />
       </div>
     </section>
+  );
+}
+//120 265
+function Stars() {
+  return (
+    <>
+      <div className="hidden md:block">
+        <Star top={120} size={62} left={0} />
+        <Star top={0} size={116} left={73} />
+        <Star top={301} size={36} left={222} />
+        <Star top={263} size={62} right={320} />
+        <Star top={160} size={116} right={95} />
+        <Star top={0} size={36} right={86} />
+        <Star top={258} size={36} right={-50} />
+      </div>
+      <div className="md:hidden">
+        <Star top={-49} left={7} size={34} />
+        <Star top={-49} left={47} size={64} />
+        <Star top={120} left={11} size={20} />
+        <Star top={-30} right={55} size={20} />
+        <Star top={118} right={11} size={64} />
+        <Star top={-30} right={51} size={34} />
+        <Star top={378} right={65} size={34} />
+        <Star top={378} right={25} size={20} />
+      </div>
+    </>
+  );
+}
+
+type StarProps = {
+  size: number;
+  left?: number;
+  right?: number;
+  top: number;
+};
+
+function Star({ size, top, left, right }: StarProps) {
+  return (
+    <Image
+      src={StarAsset}
+      alt="Star"
+      className="absolute"
+      style={{
+        top: `${top}px`,
+        left: `${left}px`,
+        right: `${right}px`,
+        width: size,
+        height: size,
+      }}
+    />
   );
 }

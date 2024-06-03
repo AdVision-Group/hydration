@@ -14,6 +14,7 @@ export default function LiquidityIncentivesSection() {
       <div className="flex flex-col mx-auto">
         <LiquidityIncentivesCans />
         <LiquidityIncentivesArches />
+        <div className="~pt-24/36 bg-beige" />
       </div>
     </section>
   );

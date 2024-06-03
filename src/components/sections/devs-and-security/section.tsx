@@ -50,17 +50,19 @@ export default function DevsAndSecuritySection() {
         //   objectFit="cover"
         className="-translate-y-10 h-[110%] top-0 bottom-0 absolute object-center w-[180%] -translate-x-[20%] max-w-none"
       /> */}
-      <div className="~pt-[4rem]/[16.938rem] flex ~gap-8/6 container flex-col mx-auto items-center max-w-[550px] relative z-10">
-        <SectionLabel captionClassName="text-blue" iconClassName="bg-blue">
-          Developers and Security
-        </SectionLabel>
-        <Heading className="text-center text-white" size="large">
-          Help build the <br className="hidden lg:inline" /> future of finance
-        </Heading>
-        <Paragraph size="large" className="text-white text-center">
-          Hydration provides the liquidity layer which empowers developers to
-          build the financial apps of tomorrow.
-        </Paragraph>
+      <div className="mx-auto container">
+        <div className="~pt-[4rem]/[16.938rem] flex ~gap-8/6 flex-col items-center max-w-[550px] relative z-10">
+          <SectionLabel captionClassName="text-blue" iconClassName="bg-blue">
+            Developers and Security
+          </SectionLabel>
+          <Heading className="text-center text-white" size="large">
+            Help build the <br className="hidden lg:inline" /> future of finance
+          </Heading>
+          <Paragraph size="large" className="text-white text-center">
+            Hydration provides the liquidity layer which empowers developers to
+            build the financial apps of tomorrow.
+          </Paragraph>
+        </div>
       </div>
       <div className="~pt-8/16 ~pb-16/[16.938rem] flex flex-col gap-4 items-center z-10 relative container">
         {items.map((item) => (
