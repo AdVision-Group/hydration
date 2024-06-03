@@ -1,3 +1,5 @@
+"use client";
+
 import Button from "@/components/ui/buttons/button";
 import SectionLabel from "@/components/ui/labels/section";
 import Heading from "@/components/ui/typography/heading";
@@ -6,14 +8,20 @@ import CanHdx from "./assets/can-hdx.png";
 import CanPolkadot from "./assets/can-polkadot.png";
 import Star from "./assets/star.svg";
 import Image from "next/image";
+import AnimateOnView from "@/animation/motion-section";
+import { fadeIn } from "@/animation/variants";
 
 export default function LiquidityIncentivesCans() {
   return (
     <div className="flex flex-col-reverse lg:flex-row justify-between ~gap-8/12 ~pb-[5.438rem]/40 bg-beige-20-to-transparent-40 lg:bg-none">
       <div className="flex flex-col gap-2 pt-16 lg:w-[50%] container mx-auto">
         <SectionLabel>Liquidity Incentives</SectionLabel>
-        <div className="flex flex-col gap-8">
-          <Heading size="large">
+        <AnimateOnView element="div" className="flex flex-col gap-8">
+          <Heading
+            size="large"
+            className="text-left"
+            animationVariants={fadeIn()}
+          >
             Hydrate Your Summer with up to 260% APR
           </Heading>
           <Paragraph size="large" className="text-purple-dim">
@@ -35,7 +43,7 @@ export default function LiquidityIncentivesCans() {
               Learn More
             </Button>
           </div>
-        </div>
+        </AnimateOnView>
       </div>
       {/* TODO: we are probably not going to use clamp here to get the animation right */}
       <div className="relative lg:w-[50%] min-h-[250px] container mx-auto">

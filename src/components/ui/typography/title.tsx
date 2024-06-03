@@ -1,4 +1,9 @@
+"use client";
+
+import LetterByLetter from "@/components/animation/LetterByLetter";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/animation/variants";
 
 type TitleProps = {
   children: React.ReactNode;
@@ -15,7 +20,7 @@ export default function Title({ children, className, size }: TitleProps) {
           className
         )}
       >
-        {children}
+        <motion.div variants={fadeIn()}>{children}</motion.div>
       </h5>
     );
   }
@@ -27,7 +32,7 @@ export default function Title({ children, className, size }: TitleProps) {
         className
       )}
     >
-      {children}
+      <motion.div variants={fadeIn()}>{children}</motion.div>
     </h6>
   );
 }

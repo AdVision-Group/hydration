@@ -6,6 +6,7 @@ export type MotionSectionProps = {
   className?: string;
   element?: "section" | "div";
   variants?: Variants;
+  style?: React.CSSProperties;
 };
 
 export default function AnimateOnView({
@@ -13,13 +14,15 @@ export default function AnimateOnView({
   className,
   element = "section",
   variants,
+  style,
 }: MotionSectionProps) {
   const props = {
     className,
     initial: "initial",
     whileInView: "visible",
     viewport: { once: true, amount: 0.5 },
-    variants: variants,
+    variants,
+    style,
   };
   if (element === "div") {
     return <motion.div {...props}>{children}</motion.div>;

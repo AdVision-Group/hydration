@@ -1,6 +1,8 @@
 import React from "react";
 import Title from "@/components/ui/typography/title";
 import Paragraph from "@/components/ui/typography/paragraph";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/animation/variants";
 
 export type DevsAndSecurityItemProps = {
   title: string;
@@ -14,7 +16,10 @@ export default function DevsAndSecurityItem({
   icon: Icon,
 }: DevsAndSecurityItemProps) {
   return (
-    <div className="flex justify-between gap-5 p-2 bg-white rounded-md border border-blue group">
+    <motion.div
+      variants={fadeUp()}
+      className="flex justify-between gap-5 p-2 bg-white rounded-md border border-blue group"
+    >
       <div className="rounded-sm bg-white shadow-blue-inset min-w-[4.875rem] w-[4.875rem] md:h-[6.125rem] flex justify-center items-center">
         <Icon className="transition-all text-blue group-hover:text-purple" />
       </div>
@@ -26,6 +31,6 @@ export default function DevsAndSecurityItem({
           {description}
         </Paragraph>
       </div>
-    </div>
+    </motion.div>
   );
 }

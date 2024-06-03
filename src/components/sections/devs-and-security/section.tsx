@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import PoolImage from "./assets/pool.png";
 import SectionLabel from "@/components/ui/labels/section";
 import DevsAndSecurityItem, { DevsAndSecurityItemProps } from "./item";
@@ -9,6 +9,9 @@ import LockIcon from "./icons/lock";
 import CodeIcon from "./icons/code";
 import GithubIcon from "./icons/github";
 import DocumentIcon from "./icons/document";
+import AnimateOnView from "@/animation/motion-section";
+import { motion } from "framer-motion";
+import { staggerChildren } from "@/animation/variants";
 
 const items: DevsAndSecurityItemProps[] = [
   {
@@ -38,7 +41,7 @@ const items: DevsAndSecurityItemProps[] = [
 
 export default function DevsAndSecuritySection() {
   return (
-    <section
+    <AnimateOnView
       className="relative w-full overflow-hidden bg-[length:auto_120%] md:bg-[length:auto_100%] bg-[center_calc(30%)] md:bg-[center_top] "
       style={{
         backgroundImage: `url(${PoolImage.src})`,
@@ -64,11 +67,14 @@ export default function DevsAndSecuritySection() {
           </Paragraph>
         </div>
       </div>
-      <div className="~pt-8/16 ~pb-16/[16.938rem] flex flex-col gap-4 items-center z-10 relative container mx-auto">
+      <motion.div
+        variants={staggerChildren(0.5)}
+        className="~pt-8/16 ~pb-16/[16.938rem] flex flex-col gap-4 items-center z-10 relative container mx-auto"
+      >
         {items.map((item) => (
           <DevsAndSecurityItem key={item.title} {...item} />
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </AnimateOnView>
   );
 }

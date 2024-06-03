@@ -1,13 +1,19 @@
+"use client";
+
 import Button from "@/components/ui/buttons/button";
 import SectionLabel from "@/components/ui/labels/section";
 import Heading from "@/components/ui/typography/heading";
 import Paragraph from "@/components/ui/typography/paragraph";
 import Image from "next/image";
 import StarAsset from "./assets/star.svg";
+import AnimateOnView from "@/animation/motion-section";
 
 export default function ReferralsSection() {
   return (
-    <section className="bg-beige pb-[6.563rem] rounded-b-[4rem] ">
+    <AnimateOnView
+      element="section"
+      className="bg-beige pb-[6.563rem] rounded-b-[4rem] "
+    >
       <div className="container mx-auto relative">
         <div className="max-w-[650px] mx-auto flex flex-col gap-8 items-center justify-center text-center relative z-[2]">
           <div className="flex flex-col items-center gap-2">
@@ -25,7 +31,7 @@ export default function ReferralsSection() {
         </div>
         <Stars />
       </div>
-    </section>
+    </AnimateOnView>
   );
 }
 //120 265

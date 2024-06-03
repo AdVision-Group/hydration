@@ -1,8 +1,11 @@
+"use client";
+
 import Heading from "@/components/ui/typography/heading";
 import ScrollLock from "../scroll-lock";
 import SectionLabel from "@/components/ui/labels/section";
 import { bulletPoints } from "../data";
 import BulletPointRow from "./bullet-point-row";
+import AnimateOnView from "@/animation/motion-section";
 
 export default function EmpoweringDaosDesktopContent() {
   return (

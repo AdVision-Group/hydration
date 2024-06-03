@@ -1,6 +1,8 @@
 import Paragraph from "@/components/ui/typography/paragraph";
 import Title from "@/components/ui/typography/title";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import { staggerChildren } from "@/animation/variants";
 
 export type ItemProps = {
   title: string;
@@ -10,11 +12,12 @@ export type ItemProps = {
 
 export default function Item({ align, title, description }: ItemProps) {
   return (
-    <div
+    <motion.div
       className={twMerge(
         "flex flex-col gap-4",
         align === "left" ? "text-left" : "text-right"
       )}
+      variants={staggerChildren(0)}
     >
       <div
         className={twMerge(
@@ -32,6 +35,6 @@ export default function Item({ align, title, description }: ItemProps) {
       >
         {description}
       </Paragraph>
-    </div>
+    </motion.div>
   );
 }

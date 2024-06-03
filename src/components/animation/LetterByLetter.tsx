@@ -10,10 +10,24 @@ export default function LetterByLetter({ children }: LetterByLetterProps) {
   // Function to handle recursive children parsing
   const parseChildren = (element) => {
     if (typeof element === "string") {
-      return element.split("").map((letter, index) => (
-        <motion.span className="inline-block" key={index} variants={fadeUp()}>
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
+      // Split the text into words and handle them individually
+      return element.split(/\s+/).map((word, index) => (
+        <Fragment key={index}>
+          <span style={{ display: "inline-flex", overflow: "hidden" }}>
+            {" "}
+            {/* Ensure each word is treated as an inline-flex container */}
+            {word.split("").map((letter, letterIndex) => (
+              <motion.span
+                className="inline-block"
+                key={letterIndex}
+                variants={fadeUp()}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </span>{" "}
+          {/* Add normal space for natural text flow */}
+        </Fragment>
       ));
     } else if (Array.isArray(element)) {
       return element.map((child, index) => (

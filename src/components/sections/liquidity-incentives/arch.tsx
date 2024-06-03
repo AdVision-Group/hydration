@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
 import ArchBackground from "./assets/arch.svg";
 import Image from "next/image";
 import Heading from "@/components/ui/typography/heading";
 import Paragraph from "@/components/ui/typography/paragraph";
 import { twMerge } from "tailwind-merge";
+import AnimateOnView from "@/animation/motion-section";
+import { fadeUp, scaleUp } from "@/animation/variants";
+import { motion } from "framer-motion";
 
 type ArchProps =
   | {
@@ -31,19 +36,28 @@ export default function Arch(props: ArchProps) {
         objectFit="contain"
       />
       {!props.empty && (
-        <div className="flex flex-col ~gap-8/16 justify-center items-center text-center p-12 lg:p-0">
-          <div className="~w-[8.75rem]/[16.25rem] mx-auto pt-0 lg:pt-20 z-10">
+        <AnimateOnView
+          element="div"
+          className="flex flex-col ~gap-8/16 justify-center items-center text-center p-12 lg:p-0"
+        >
+          <motion.div
+            variants={scaleUp()}
+            className="~w-[8.75rem]/[16.25rem] mx-auto pt-0 lg:pt-20 z-10"
+          >
             {props.Icon}
-          </div>
-          <div className="flex flex-col gap-8 max-w-[300px] lg:max-w-[415px] lg:mx-8 z-10">
+          </motion.div>
+          <motion.div
+            variants={fadeUp()}
+            className="flex flex-col gap-8 max-w-[300px] lg:max-w-[415px] lg:mx-8 z-10"
+          >
             <Heading size="large" className="text-purple">
               {props.title}
             </Heading>
             <Paragraph size="large" className="text-purple-dim">
               {props.description}
             </Paragraph>
-          </div>
-        </div>
+          </motion.div>
+        </AnimateOnView>
       )}
     </div>
   );
