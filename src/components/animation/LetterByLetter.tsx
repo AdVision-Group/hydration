@@ -8,7 +8,7 @@ type LetterByLetterProps = {
 
 export default function LetterByLetter({ children }: LetterByLetterProps) {
   // Function to handle recursive children parsing
-  const parseChildren = (element) => {
+  const parseChildren = (element: ReactNode) => {
     if (typeof element === "string") {
       // Split the text into words and handle them individually
       return element.split(/\s+/).map((word, index) => (
