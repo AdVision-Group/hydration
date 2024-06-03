@@ -1,23 +1,28 @@
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
 export type MotionSectionProps = {
   children: ReactNode;
   className?: string;
+  element?: "section" | "div";
+  variants?: Variants;
 };
 
-export default function MotionSection({
+export default function AnimateOnView({
   children,
   className,
+  element = "section",
+  variants,
 }: MotionSectionProps) {
-  return (
-    <motion.section
-      className={className}
-      initial="initial"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-    >
-      {children}
-    </motion.section>
-  );
+  const props = {
+    className,
+    initial: "initial",
+    whileInView: "visible",
+    viewport: { once: true, amount: 0.5 },
+    variants: variants,
+  };
+  if (element === "div") {
+    return <motion.div {...props}>{children}</motion.div>;
+  }
+  return <motion.section {...props}>{children}</motion.section>;
 }

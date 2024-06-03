@@ -10,11 +10,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import LetterByLetter from "@/components/animation/LetterByLetter";
 import { delayChildren, staggerChildren } from "@/animation/variants";
-import MotionSection from "@/animation/motion-section";
+import AnimateOnView from "@/animation/motion-section";
 
 export default function HeroSection() {
   return (
-    <MotionSection className="relative lg:min-h-[820px]">
+    <AnimateOnView className="relative lg:min-h-[820px]">
       <Image
         src={HeroImage}
         alt="Pool"
@@ -32,7 +32,7 @@ export default function HeroSection() {
           <SupportingBadge />
         </motion.div>
       </div>
-    </MotionSection>
+    </AnimateOnView>
   );
 }
 

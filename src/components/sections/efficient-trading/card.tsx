@@ -1,4 +1,8 @@
-import Button, { ButtonProps } from "@/components/ui/buttons/button";
+"use client";
+
+import AnimateOnView from "@/animation/motion-section";
+import { fadeUp } from "@/animation/variants";
+import { ButtonProps } from "@/components/ui/buttons/button";
 import Heading from "@/components/ui/typography/heading";
 import Paragraph from "@/components/ui/typography/paragraph";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -54,7 +58,7 @@ export default function EfficientTradingCard({
         className
       )}
     >
-      <div className="relative h-full w-full">
+      <AnimateOnView className="relative h-full w-full" variants={fadeUp()}>
         <div className="flex flex-col gap-4 pb-10 lg:pb-0">
           <Image src={icon.src} alt={icon.alt} className="~w-12/14 ~h-12/14" />
           <Heading
@@ -76,7 +80,7 @@ export default function EfficientTradingCard({
         <div className="lg:absolute flex-col items-end md:flex-row bottom-0 left-0 flex gap-4 justify-end w-full">
           {buttons}
         </div>
-      </div>
+      </AnimateOnView>
     </article>
   );
 }
