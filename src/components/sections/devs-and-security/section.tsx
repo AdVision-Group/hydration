@@ -51,7 +51,7 @@ export default function DevsAndSecuritySection() {
         className="-translate-y-10 h-[110%] top-0 bottom-0 absolute object-center w-[180%] -translate-x-[20%] max-w-none"
       /> */}
       <div className="mx-auto container">
-        <div className="~pt-[4rem]/[16.938rem] flex ~gap-8/6 flex-col items-center max-w-[550px] relative z-10">
+        <div className="~pt-[4rem]/[16.938rem] flex ~gap-8/6 flex-col items-center max-w-[550px] relative z-10 mx-auto">
           <SectionLabel captionClassName="text-blue" iconClassName="bg-blue">
             Developers and Security
           </SectionLabel>
@@ -64,7 +64,7 @@ export default function DevsAndSecuritySection() {
           </Paragraph>
         </div>
       </div>
-      <div className="~pt-8/16 ~pb-16/[16.938rem] flex flex-col gap-4 items-center z-10 relative container">
+      <div className="~pt-8/16 ~pb-16/[16.938rem] flex flex-col gap-4 items-center z-10 relative container mx-auto">
         {items.map((item) => (
           <DevsAndSecurityItem key={item.title} {...item} />
         ))}
