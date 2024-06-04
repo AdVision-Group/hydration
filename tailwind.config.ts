@@ -12,6 +12,9 @@ const config: Config = {
   },
   theme: {
     extend: {
+      transitionDuration: {
+        DEFAULT: "0.3s",
+      },
       backgroundImage: {
         "beige-80-to-transparent-100":
           "linear-gradient(to top, #F6F6EC 0%, #F6F6EC 80%, transparent 100%)",
