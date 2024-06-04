@@ -105,9 +105,10 @@ export default function LiquidityIncentivesCans() {
           }}
           onAnimationStart={animateStar}
           variants={{
-            initial: { offsetDistance: "0%" },
+            initial: { offsetDistance: "0%", rotate: 10 },
             visible: {
               offsetDistance: "100%",
+              rotate: 0,
               transition: { duration: 1, ease: cubicBezier(0.5, 0, 0.5, 1) },
             },
           }}
@@ -130,10 +131,10 @@ export default function LiquidityIncentivesCans() {
             offsetRotate: "0deg",
           }}
           variants={{
-            initial: { offsetDistance: "0%", scale: 1 },
+            initial: { offsetDistance: "0%", rotate: -10 },
             visible: {
               offsetDistance: "100%",
-              scale: 1,
+              rotate: 0,
               transition: { duration: 1, ease: cubicBezier(0.5, 0, 0.5, 1) },
             },
           }}

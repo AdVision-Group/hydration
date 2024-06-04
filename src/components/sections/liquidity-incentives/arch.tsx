@@ -17,10 +17,12 @@ type ArchProps =
       description: string;
       Icon: React.ReactNode;
       className?: string;
+      children?: React.ReactNode;
     }
   | {
       empty: true;
       className?: string;
+      children?: React.ReactNode;
     };
 
 export default function Arch(props: ArchProps) {
@@ -28,6 +30,7 @@ export default function Arch(props: ArchProps) {
     <div
       className={twMerge("relative lg:w-[584px] lg:h-[705px]", props.className)}
     >
+      {props.children}
       <Image
         src={ArchBackground}
         className="z-[5] scale-y-[120%] [@media(min-width:400px)]:scale-y-100"

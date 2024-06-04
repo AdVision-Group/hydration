@@ -6,31 +6,32 @@ import { twMerge } from "tailwind-merge";
 const menuItems = [
   {
     label: "Trade",
-    href: "/trade",
+    href: "/#trade",
   },
   {
     label: "Lend & Borrow",
-    href: "/lend-borrow",
+    href: "/#lend-borrow",
   },
   {
     label: "HOLLAR",
-    href: "/hollar",
+    href: "/#hollar",
   },
   {
     label: "Referrals",
-    href: "/referrals",
+    href: "/#referrals",
   },
   {
     label: "Governance",
-    href: "/governance",
+    href: "/#governance",
   },
   {
     label: "Devs",
-    href: "/devs",
+    href: "/#devs",
   },
   {
     label: "Docs",
-    href: "/docs",
+    href: "https://docs.hydradx.io/",
+    target: "_blank",
   },
 ];
 
@@ -51,6 +52,7 @@ export default function Header({ className }: HeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
+                target={item.target}
                 className="transition group-hover:opacity-50 hover:!opacity-100 text-base font-medium font-geist leading-5 text-purple pointer-events-auto"
               >
                 {item.label}

@@ -12,6 +12,7 @@ import AnimateOnView from "@/animation/motion-section";
 import { motion } from "framer-motion";
 import { staggerChildren } from "@/animation/variants";
 import useProgressiveImage from "@/hooks/useProgressiveImage";
+import ScrollAnchor from "@/components/scroll-anchor";
 
 const items: DevsAndSecurityItemProps[] = [
   {
@@ -58,7 +59,8 @@ export default function DevsAndSecuritySection() {
         //   objectFit="cover"
         className="-translate-y-10 h-[110%] top-0 bottom-0 absolute object-center w-[180%] -translate-x-[20%] max-w-none"
       /> */}
-      <div className="mx-auto container">
+      <div className="mx-auto container relative">
+        <ScrollAnchor id="devs" />
         <div className="~pt-[4rem]/[16.938rem] flex ~gap-8/6 flex-col items-center max-w-[550px] relative z-10 mx-auto">
           <SectionLabel captionClassName="text-blue" iconClassName="bg-blue">
             Developers and Security

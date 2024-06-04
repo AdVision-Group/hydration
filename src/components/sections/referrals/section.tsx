@@ -9,6 +9,7 @@ import StarAsset from "./assets/star.svg";
 import AnimateOnView from "@/animation/motion-section";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import ScrollAnchor from "@/components/scroll-anchor";
 
 export default function ReferralsSection() {
   return (
@@ -17,6 +18,7 @@ export default function ReferralsSection() {
       className="bg-beige pb-[6.563rem] rounded-b-[4rem] "
     >
       <div className="container mx-auto relative">
+        <ScrollAnchor id="referrals" />
         <div className="max-w-[650px] mx-auto flex flex-col gap-8 items-center justify-center text-center relative z-[2]">
           <div className="flex flex-col items-center gap-2">
             <SectionLabel>Referrals</SectionLabel>
@@ -71,7 +73,7 @@ type StarProps = {
 };
 
 function Star({ size, top, left, right }: StarProps) {
-  const [delay, setDelay] = useState(Math.random() * 2);
+  const [delay] = useState(Math.random() * 2);
   return (
     <motion.div
       className="absolute"
