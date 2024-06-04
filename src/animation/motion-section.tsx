@@ -7,6 +7,7 @@ export type MotionSectionProps = {
   element?: "section" | "div";
   variants?: Variants;
   style?: React.CSSProperties;
+  threshold?: number;
 };
 
 export default function AnimateOnView({
@@ -15,12 +16,13 @@ export default function AnimateOnView({
   element = "section",
   variants,
   style,
+  threshold = 0.5,
 }: MotionSectionProps) {
   const props = {
     className,
     initial: "initial",
     whileInView: "visible",
-    viewport: { once: true, amount: 0.5 },
+    viewport: { once: true, amount: threshold },
     variants,
     style,
   };
