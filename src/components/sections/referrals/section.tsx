@@ -7,6 +7,8 @@ import Paragraph from "@/components/ui/typography/paragraph";
 import Image from "next/image";
 import StarAsset from "./assets/star.svg";
 import AnimateOnView from "@/animation/motion-section";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function ReferralsSection() {
   return (
@@ -69,18 +71,34 @@ type StarProps = {
 };
 
 function Star({ size, top, left, right }: StarProps) {
+  const [delay, setDelay] = useState(Math.random() * 2);
   return (
-    <Image
-      src={StarAsset}
-      alt="Star"
+    <motion.div
       className="absolute"
       style={{
         top: `${top}px`,
         left: `${left}px`,
         right: `${right}px`,
-        width: size,
-        height: size,
       }}
-    />
+      initial={{ scale: 0.6 }}
+      animate={{
+        scale: 1,
+        transition: {
+          delay: delay,
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "reverse",
+        },
+      }}
+    >
+      <Image
+        src={StarAsset}
+        alt="Star"
+        style={{
+          width: size,
+          height: size,
+        }}
+      />
+    </motion.div>
   );
 }

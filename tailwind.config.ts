@@ -18,6 +18,7 @@ const config: Config = {
         none: "none",
         "beige-20-to-transparent-40":
           "linear-gradient(to top, #F6F6EC 0%, #F6F6EC 20%, transparent 40%)",
+        "purple-to-transparent": "linear-gradient(#240E32 0 0)",
       },
       fontSize: {
         "2xs": "0.625rem",

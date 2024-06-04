@@ -4,9 +4,13 @@ import React, { Fragment, ReactNode } from "react";
 
 type LetterByLetterProps = {
   children: ReactNode;
+  staggerDelay?: number;
 };
 
-export default function LetterByLetter({ children }: LetterByLetterProps) {
+export default function LetterByLetter({
+  children,
+  staggerDelay = 0.05,
+}: LetterByLetterProps) {
   // Function to handle recursive children parsing
   const parseChildren = (element: ReactNode) => {
     if (typeof element === "string") {
@@ -39,7 +43,7 @@ export default function LetterByLetter({ children }: LetterByLetterProps) {
   };
 
   return (
-    <motion.div variants={staggerChildren(0.05)}>
+    <motion.div variants={staggerChildren(staggerDelay)}>
       {React.Children.map(children, (child) => (
         <Fragment>{parseChildren(child)}</Fragment>
       ))}

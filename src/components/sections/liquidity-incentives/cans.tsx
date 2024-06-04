@@ -38,7 +38,7 @@ export default function LiquidityIncentivesCans() {
       scale: 1,
       opacity: 1,
       y: 0,
-      transition: { delay: 0.6, duration: 1.4, ease: "easeInOut" },
+      transition: { delay: 0.6, duration: 1, ease: "easeInOut" },
     });
 
     controls.start({
@@ -94,7 +94,7 @@ export default function LiquidityIncentivesCans() {
             visible: {
               x: 0,
               rotate: 0,
-              transition: { duration: 1.4, ease: "easeIn" },
+              transition: { duration: 1, ease: "easeIn" },
             },
           }}
         >
@@ -115,7 +115,7 @@ export default function LiquidityIncentivesCans() {
               opacity: 1,
               x: 0,
               rotate: 0,
-              transition: { duration: 1.4, ease: "easeIn" },
+              transition: { duration: 1, ease: "easeIn" },
             },
           }}
         >

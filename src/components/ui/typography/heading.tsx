@@ -30,7 +30,7 @@ export default function Heading({
         {animationVariants ? (
           <motion.div variants={animationVariants}>{children}</motion.div>
         ) : (
-          <LetterByLetter>{children}</LetterByLetter>
+          <LetterByLetter staggerDelay={0.02}>{children}</LetterByLetter>
         )}
       </h4>
     );
@@ -47,7 +47,7 @@ export default function Heading({
         {animationVariants ? (
           <motion.div variants={animationVariants}>{children}</motion.div>
         ) : (
-          <LetterByLetter>{children}</LetterByLetter>
+          <LetterByLetter staggerDelay={0.03}>{children}</LetterByLetter>
         )}
       </h2>
     );
@@ -63,7 +63,7 @@ export default function Heading({
       {animationVariants ? (
         <motion.div variants={animationVariants}>{children}</motion.div>
       ) : (
-        <LetterByLetter>{children}</LetterByLetter>
+        <LetterByLetter staggerDelay={0.03}>{children}</LetterByLetter>
       )}
     </h3>
   );
