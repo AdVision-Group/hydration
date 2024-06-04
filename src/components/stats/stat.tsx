@@ -28,7 +28,7 @@ export function Stat({
     duration: 2000,
   });
   return (
-    <div className={twMerge("flex flex-col lg:gap-2 gap-1", className)}>
+    <div className={twMerge("flex flex-col gap-0", className)}>
       <div className="flex gap-3.5">
         <p className="font-geist font-normal text-sm leading-4 text-lavender">
           <span className="hidden lg:inline">{title}</span>

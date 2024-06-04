@@ -6,6 +6,7 @@ import SectionLabel from "@/components/ui/labels/section";
 import { bulletPoints } from "../data";
 import BulletPointRow from "./bullet-point-row";
 import AnimateOnView from "@/animation/motion-section";
+import { fadeIn } from "@/animation/variants";
 
 export default function EmpoweringDaosDesktopContent() {
   return (
@@ -17,7 +18,11 @@ export default function EmpoweringDaosDesktopContent() {
             <div className="flex flex-col justify-between h-full">
               <div className="flex flex-col gap-4">
                 <SectionLabel>Empowering DAOs</SectionLabel>
-                <Heading size="medium" className="max-w-[1066px] text-lavender">
+                <Heading
+                  size="medium"
+                  className="max-w-[1066px] text-lavender"
+                  animationVariants={fadeIn()}
+                >
                   15+ projects and DAOs manage their liquidity using Hydration,
                   including the Treasury of Polkadot
                 </Heading>
@@ -31,10 +36,10 @@ export default function EmpoweringDaosDesktopContent() {
                     active={bullet.active(progress)}
                   />
                 ))}
-                <div
+                {/* <div
                   className="absolute top-0 left-[5px] w-[2px] bg-lavender-dim z-[1]"
                   style={{ height: `${progress}%` }}
-                />
+                /> */}
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SmoothScrolling from "@/components/smooth";
+import SmoothScroll from "@/components/smooth";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="">
-      <SmoothScrolling>
+      <SmoothScroll>
         <body>{children}</body>
-      </SmoothScrolling>
+      </SmoothScroll>
     </html>
   );
 }

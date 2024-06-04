@@ -1,5 +1,4 @@
 "use client";
-import PoolImage from "./assets/pool.png";
 import SectionLabel from "@/components/ui/labels/section";
 import DevsAndSecurityItem, { DevsAndSecurityItemProps } from "./item";
 
@@ -12,6 +11,7 @@ import DocumentIcon from "./icons/document";
 import AnimateOnView from "@/animation/motion-section";
 import { motion } from "framer-motion";
 import { staggerChildren } from "@/animation/variants";
+import useProgressiveImage from "@/hooks/useProgressiveImage";
 
 const items: DevsAndSecurityItemProps[] = [
   {
@@ -40,11 +40,16 @@ const items: DevsAndSecurityItemProps[] = [
 ];
 
 export default function DevsAndSecuritySection() {
+  const imageSrc = useProgressiveImage({
+    src: "/pool.png",
+    placeholderSrc: "/pool-placeholder.png",
+  });
+
   return (
     <AnimateOnView
-      className="relative w-full overflow-hidden bg-[length:auto_120%] md:bg-[length:auto_100%] bg-[center_calc(30%)] md:bg-[center_top] "
+      className="relative w-full overflow-hidden lg:bg-cover bg-[length:auto_120%]  bg-[center_calc(30%)] md:bg-[center_top] bg-no-repeat"
       style={{
-        backgroundImage: `url(${PoolImage.src})`,
+        backgroundImage: `url(${imageSrc})`,
       }}
     >
       {/* <Image
@@ -59,7 +64,9 @@ export default function DevsAndSecuritySection() {
             Developers and Security
           </SectionLabel>
           <Heading className="text-center text-white" size="large">
-            Help build the <br className="hidden lg:inline" /> future of finance
+            Help build the
+            <br className="hidden lg:inline" />
+            future of finance
           </Heading>
           <Paragraph size="large" className="text-white text-center">
             Hydration provides the liquidity layer which empowers developers to

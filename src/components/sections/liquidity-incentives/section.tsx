@@ -11,7 +11,7 @@ export default function LiquidityIncentivesSection() {
         backgroundSize: "clamp(4.375rem, 0.804rem + 8.929vi, 9.375rem)",
       }}
     >
-      <div className="flex flex-col mx-auto">
+      <div className="flex flex-col mx-auto container">
         <LiquidityIncentivesCans />
         <LiquidityIncentivesArches />
         <div className="~pt-24/36 bg-beige" />

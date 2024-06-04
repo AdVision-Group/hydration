@@ -17,7 +17,7 @@ export default function BulletPointRow({
   return (
     <div className="flex justify-between gap-8 z-[2]">
       <div className="flex items-center gap-4 w-[45%]">
-        <Bullet active={active} />
+        {active && <Bullet active={true} />}
         <Heading
           size="small"
           className={`transition ${active ? "text-lavender" : "text-lavender-dim"}`}
