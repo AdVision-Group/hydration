@@ -12,7 +12,7 @@ export default function EmpoweringDaosDesktopContent() {
     <ScrollLock
       durationPx={2000}
       render={(progress) => (
-        <section className="bg-purple w-full h-screen">
+        <AnimateOnView className="bg-purple w-full h-screen">
           <div className="container py-[7.5rem] flex flex-col gap-[7.5rem] h-full mx-auto">
             <div className="flex flex-col ~gap-12/[7.5rem] h-full">
               <div className="flex flex-col gap-4">
@@ -36,7 +36,7 @@ export default function EmpoweringDaosDesktopContent() {
               </div>
             </div>
           </div>
-        </section>
+        </AnimateOnView>
       )}
     />
   );

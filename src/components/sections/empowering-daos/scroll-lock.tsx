@@ -3,6 +3,11 @@
 import useResize from "@/hooks/useResize";
 import useScroll from "@/hooks/useScroll";
 import React, { useState, useRef, useMemo } from "react";
+import {
+  InPortal,
+  OutPortal,
+  createHtmlPortalNode,
+} from "react-reverse-portal";
 
 type ScrollLockProps = {
   durationPx: number;
@@ -14,6 +19,8 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
   const placeholderRef = useRef<HTMLDivElement>(null);
 
   const [top, setTop] = useState(0);
+
+  const portalNode = useMemo(() => createHtmlPortalNode(), []);
 
   useResize(({ height }) => {
     if (placeholderRef.current) {
@@ -37,7 +44,10 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
 
   return (
     <>
-      <div className="z-[15]">{render(0)}</div>
+      <InPortal node={portalNode}>{render(progress)}</InPortal>
+      <div className="z-[15] h-screen bg-purple">
+        {progress === 0 && <OutPortal node={portalNode} />}
+      </div>
       {progress > 0 && progress < 100 && (
         <div
           style={{
@@ -49,7 +59,7 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
             zIndex: 25,
           }}
         >
-          {render(progress)}
+          <OutPortal node={portalNode} />
         </div>
       )}
       <div
@@ -57,7 +67,9 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
         ref={placeholderRef}
         style={{ height: `calc(${durationPx}px  - 100vh)` }}
       />
-      <div className="z-[15]">{render(100)}</div>
+      <div className="z-[15] h-screen bg-purple">
+        {progress === 100 && <OutPortal node={portalNode} />}
+      </div>
     </>
   );
 }
