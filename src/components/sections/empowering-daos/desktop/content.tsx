@@ -22,17 +22,19 @@ export default function EmpoweringDaosDesktopContent() {
                   including the Treasury of Polkadot
                 </Heading>
               </div>
-              <div className="flex flex-col h-full justify-between">
+              <div className="flex flex-col h-full justify-between relative z-[2]">
                 {bulletPoints.map((bullet, index) => (
                   <BulletPointRow
                     key={index}
                     title={bullet.title}
                     description={bullet.description}
-                    active={
-                      progress >= index * 20 && progress <= (index + 1) * 20
-                    }
+                    active={bullet.active(progress)}
                   />
                 ))}
+                <div
+                  className="absolute top-0 left-[5px] w-[2px] bg-lavender-dim z-[1]"
+                  style={{ height: `${progress}%` }}
+                />
               </div>
             </div>
           </div>

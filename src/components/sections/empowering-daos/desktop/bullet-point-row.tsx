@@ -1,7 +1,7 @@
 import Heading from "@/components/ui/typography/heading";
 import Paragraph from "@/components/ui/typography/paragraph";
-import Image from "next/image";
-import Bullet from "../assets/bullet.svg";
+import Bullet from "./bullet";
+import { none } from "@/animation/variants";
 
 type BulletPointRowProps = {
   title: React.ReactNode;
@@ -15,9 +15,9 @@ export default function BulletPointRow({
   active,
 }: BulletPointRowProps) {
   return (
-    <div className="flex justify-between gap-8">
+    <div className="flex justify-between gap-8 z-[2]">
       <div className="flex items-center gap-4 w-[45%]">
-        {active && <Image src={Bullet} alt="" />}
+        <Bullet active={active} />
         <Heading
           size="small"
           className={`transition ${active ? "text-lavender" : "text-lavender-dim"}`}
@@ -28,6 +28,7 @@ export default function BulletPointRow({
       <div className="w-[55%]">
         <Paragraph
           size="medium"
+          animationVariants={none()}
           className={`transition text-lavender ${active ? "opacity-100" : "opacity-0"}`}
         >
           {description}
