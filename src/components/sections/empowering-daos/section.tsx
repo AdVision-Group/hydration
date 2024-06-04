@@ -8,10 +8,10 @@ export default function EmpoweringDaosSection() {
   // Using js to determine if the screen is mobile to avoid unnecessary scroll lock calculations
   // on mobile devices
 
-  const { width } = useScreenSize();
-  const isMobile = width < 1024;
+  const { width, height } = useScreenSize();
+  const showMobile = width < 1024 || height < 850;
 
-  return isMobile ? (
+  return showMobile ? (
     <EmpoweringDaosMobileContent />
   ) : (
     <EmpoweringDaosDesktopContent />

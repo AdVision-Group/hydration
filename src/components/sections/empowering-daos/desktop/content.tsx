@@ -14,7 +14,7 @@ export default function EmpoweringDaosDesktopContent() {
       render={(progress) => (
         <AnimateOnView className="bg-purple w-full h-screen">
           <div className="container py-[7.5rem] flex flex-col gap-[7.5rem] h-full mx-auto">
-            <div className="flex flex-col ~gap-12/[7.5rem] h-full">
+            <div className="flex flex-col justify-between h-full">
               <div className="flex flex-col gap-4">
                 <SectionLabel>Empowering DAOs</SectionLabel>
                 <Heading size="medium" className="max-w-[1066px] text-lavender">
@@ -22,7 +22,7 @@ export default function EmpoweringDaosDesktopContent() {
                   including the Treasury of Polkadot
                 </Heading>
               </div>
-              <div className="flex flex-col h-full justify-between relative z-[2]">
+              <div className="flex flex-col h-full justify-between max-h-[54vh] relative z-[2]">
                 {bulletPoints.map((bullet, index) => (
                   <BulletPointRow
                     key={index}
