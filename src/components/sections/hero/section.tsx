@@ -117,7 +117,10 @@ function HeroSectionContent() {
           )}
         </span>
       </motion.section>
-      <Paragraph size="large" className="text-purple text-center lg:w-[430px]">
+      <Paragraph
+        size="large"
+        className="text-purple text-center max-w-[430px] lg:w-[430px]"
+      >
         Hydration unites swaps, lending and the Hollar stablecoin under the roof
         of a scalable appchain.
       </Paragraph>
