@@ -20,6 +20,7 @@ export const Default: Story = {
   args: {
     title: "Hydration security",
     description: "Find and report vulnerabilities, receive generous rewards.",
+    href: "x",
     icon: CodeIcon,
   },
   parameters: {
