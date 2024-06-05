@@ -19,24 +19,28 @@ const items: DevsAndSecurityItemProps[] = [
     title: "Hydration security",
     description: "Find and report vulnerabilities, receive generous rewards.",
     icon: LockIcon,
+    href: "https://github.com/galacticcouncil/HydraDX-security",
   },
   {
     title: "SDK for frontend applications",
     description:
       "Utilize our SDK to streamline frontend development and enhance user experiences.",
     icon: CodeIcon,
+    href: "https://github.com/galacticcouncil/sdk",
   },
   {
     title: "Github",
     description:
       "Explore our open-source repository for collaborative development and access to essential resources.",
     icon: GithubIcon,
+    href: "https://github.com/galacticcouncil",
   },
   {
     title: "Developer docs",
     description:
       "Access comprehensive documentation for seamless integration and optimization of our APIs.",
     icon: DocumentIcon,
+    href: "https://apidocs.bsx.fi/HydraDX",
   },
 ];
 

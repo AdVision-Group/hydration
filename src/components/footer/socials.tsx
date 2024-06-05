@@ -14,34 +14,29 @@ import { fadeUp } from "@/animation/variants";
 
 const socials = [
   {
-    name: "Medium",
-    href: "https://medium.com/",
-    logo: MediumLogo,
+    name: "Substack",
+    href: "https://hydradx.substack.com/",
+    logo: SubstackLogo,
   },
   {
     name: "Twitter",
-    href: "https://twitter.com/",
+    href: "https://x.com/hydra_dx",
     logo: TwitterLogo,
   },
   {
     name: "Discord",
-    href: "https://discord.com/",
+    href: "https://discord.gg/kkmY35UxAG",
     logo: DiscordLogo,
   },
   {
     name: "Telegram",
-    href: "https://telegram.org/",
+    href: "https://t.me/hydradx",
     logo: TelegramLogo,
   },
   {
     name: "Github",
-    href: "https://github.com",
+    href: "https://github.com/galacticcouncil",
     logo: GithubLogo,
-  },
-  {
-    name: "Substack",
-    href: "https://substack.com/",
-    logo: SubstackLogo,
   },
 ];
 

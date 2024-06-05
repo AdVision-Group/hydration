@@ -24,7 +24,10 @@ export default function EffectiveTradingSection() {
               <Button
                 key="1"
                 role="secondary"
-                action={{ href: "/app" }}
+                action={{
+                  href: "https://app.hydration.net/trade/swap",
+                  target: "_blank",
+                }}
                 decoration="arrow"
               >
                 Discover split trading
@@ -41,7 +44,10 @@ export default function EffectiveTradingSection() {
               <Button
                 key="1"
                 role="secondary"
-                action={{ href: "/app" }}
+                action={{
+                  href: "https://app.hydration.net/trade/swap",
+                  target: "_blank",
+                }}
                 decoration="arrow"
               >
                 Find your next swap
@@ -58,19 +64,22 @@ export default function EffectiveTradingSection() {
               <Button
                 key="1"
                 role="secondary"
-                action={{ href: "/app" }}
+                action={{
+                  href: "https://app.hydration.net/trade/dca",
+                  target: "_blank",
+                }}
                 decoration="arrow"
               >
                 Try automated trading
               </Button>,
-              <Button
-                key="2"
-                role="secondary"
-                fill="outline"
-                action={{ href: "/app" }}
-              >
-                Learn more
-              </Button>,
+              //   <Button
+              //     key="2"
+              //     role="secondary"
+              //     fill="outline"
+              //     action={{ href: "/app" }}
+              //   >
+              //     Learn more
+              //   </Button>,
             ]}
             className="lg:col-span-6"
           />
@@ -83,7 +92,10 @@ export default function EffectiveTradingSection() {
               <Button
                 key="1"
                 role="secondary"
-                action={{ href: "/app" }}
+                action={{
+                  href: "https://app.hydration.net/trade/otc",
+                  target: "_blank",
+                }}
                 decoration="arrow"
               >
                 Place an OTC order

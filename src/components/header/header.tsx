@@ -30,7 +30,7 @@ const menuItems = [
   },
   {
     label: "Docs",
-    href: "https://docs.hydradx.io/",
+    href: "https://docs.hydration.net",
     target: "_blank",
   },
 ];
@@ -59,7 +59,10 @@ export default function Header({ className }: HeaderProps) {
               </Link>
             ))}
           </nav>
-          <Button role="primary" action={{ href: "/app" }}>
+          <Button
+            role="primary"
+            action={{ href: "https://app.hydration.net", target: "_blank" }}
+          >
             Launch App
           </Button>
         </div>

@@ -7,41 +7,32 @@ const linkColums: LinkColumnProps[] = [
     links: [
       {
         title: "Trade",
-        href: "/trade",
+        href: "/#trade",
       },
       {
         title: "Lend & Borrow",
-        href: "/lend-borrow",
+        href: "/#lend-borrow",
       },
     ],
   },
-  {
-    title: "Token",
-    links: [
-      {
-        title: "$Hollar",
-        href: "/hollar",
-      },
-      {
-        title: "DAOs",
-        href: "/daos",
-      },
-    ],
-  },
+
   {
     title: "Developers",
     links: [
       {
         title: "Docs",
-        href: "/docs",
+        href: "https://docs.hydradx.io/",
+        target: "_blank",
       },
       {
         title: "Github",
-        href: "/github",
+        href: "https://github.com/galacticcouncil",
+        target: "_blank",
       },
       {
         title: "SDK",
-        href: "/sdk",
+        href: "https://github.com/galacticcouncil/sdk",
+        target: "_blank",
       },
     ],
   },
@@ -53,9 +44,7 @@ type FooterLinksProps = {
 
 export default function FooterLinks({ className }: FooterLinksProps) {
   return (
-    <div
-      className={twMerge("grid sm:grid-cols-3 grid-cols-2 gap-y-12", className)}
-    >
+    <div className={twMerge("grid grid-cols-2 gap-y-12", className)}>
       {linkColums.map((column) => (
         <LinkColumn key={column.title} {...column} />
       ))}
@@ -68,6 +57,7 @@ type LinkColumnProps = {
   links: {
     title: string;
     href: string;
+    target?: "_blank";
   }[];
 };
 
@@ -79,6 +69,7 @@ function LinkColumn({ title, links }: LinkColumnProps) {
         <div key={link.href}>
           <Link
             href={link.href}
+            target={link.target}
             className="text-base font-geist  text-purple inline-block pb-[2px] bg-purple-to-transparent bg-[bottom_left] bg-[length:0_2px] bg-no-repeat hover:bg-[bottom_right] hover:bg-[length:100%_2px]"
             style={{
               transition: "background-size 0.3s, background-position 0s 0.3s",

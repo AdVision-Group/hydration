@@ -10,6 +10,7 @@ import LetterByLetter from "@/components/animation/LetterByLetter";
 import { delayChildren, staggerChildren } from "@/animation/variants";
 import AnimateOnView from "@/animation/motion-section";
 import useProgressiveImage from "@/hooks/useProgressiveImage";
+import useScreenSize from "@/hooks/useScreenSize";
 
 export default function HeroSection() {
   const bgImage = useProgressiveImage({
@@ -49,25 +50,40 @@ function HeroSectionContent() {
     return () => clearTimeout(intervalId);
   }, [intervalStarted]);
 
-  const texts = useMemo(() => ["efficient", "simple", "unstoppable"], []);
+  const { width: screenWidth } = useScreenSize();
 
-  const LastWord = useCallback(
-    () => (
+  const texts = useMemo(() => {
+    if (screenWidth < 1024) {
+      return [
+        { value: "efficient", translateX: 0 },
+        { value: "simple", translateX: 0 },
+      ];
+    }
+    return [
+      { value: "efficient", translateX: 100 },
+      { value: "simple", translateX: 100 },
+      { value: "unstoppable", translateX: 0 },
+    ];
+  }, [screenWidth]);
+
+  const LastWord = useCallback(() => {
+    const current = texts[index % texts.length];
+    return (
       <motion.div
         exit={{ opacity: 0 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="text-right w-full justify-end font-gazpacho absolute inset-0 overflow-hidden"
+        style={{ translateX: current.translateX }}
+        className=" w-full justify-end font-gazpacho absolute inset-0 overflow-hidden"
       >
-        {texts[index % texts.length].split("").map((char, index) => (
+        {current.value.split("").map((char, index) => (
           <span key={index} className="inline-block">
             {char}
           </span>
         ))}
       </motion.div>
-    ),
-    [index, texts]
-  );
+    );
+  }, [index, texts]);
 
   return (
     <div className="flex flex-col justify-center items-center mx-auto ~pt-[10.5rem]/[15.938rem] pb-[13.438rem] lg:pb-[11.625rem] gap-8">
@@ -79,27 +95,37 @@ function HeroSectionContent() {
           //  setTimeout(() => setIndex(1), 500);
         }}
       >
-        <div className="block mx-auto ~text-[4.375rem]/[5.315rem] text-purple text-center font-medium ~leading-[3.969rem]/[4.76rem] w-[430px]">
+        <div className="block mx-auto ~text-[4.375rem]/[5.315rem] text-purple text-center font-medium ~leading-[3.969rem]/[4.76rem] lg:w-[430px]">
           <LetterByLetter>Finance</LetterByLetter>
         </div>
-        <span className="block mx-auto ~text-[2.5rem]/[3rem] text-purple text-center italic ~leading-[3.969rem]/[4.76rem] w-[430px]">
+        <span className="block mx-auto ~text-[2.5rem]/[3rem] text-purple text-center italic ~leading-[3.969rem]/[4.76rem] lg:w-[430px]">
           <LetterByLetter>made</LetterByLetter>
         </span>
-        <span className="block ~text-[4.375rem]/[5.315rem] text-purple text-center lg:text-right font-medium justify-self-end ~leading-[3.969rem]/[4.76rem] relative h-[1em] w-[550px]">
+        <span className="block ~text-[4.375rem]/[5.315rem] text-purple text-center  font-medium justify-self-end ~leading-[3.969rem]/[4.76rem] relative h-[1em] lg:w-[550px]">
           {intervalStarted ? (
             <AnimatePresence initial={false} mode="sync">
               <LastWord key={index} />
             </AnimatePresence>
           ) : (
-            <LetterByLetter>{texts[0]}</LetterByLetter>
+            <div
+              style={{
+                translate: 0,
+              }}
+            >
+              <LetterByLetter>{texts[0].value}</LetterByLetter>
+            </div>
           )}
         </span>
       </motion.section>
-      <Paragraph size="large" className="text-purple text-center w-[430px]">
+      <Paragraph size="large" className="text-purple text-center lg:w-[430px]">
         Hydration unites swaps, lending and the Hollar stablecoin under the roof
         of a scalable appchain.
       </Paragraph>
-      <Button role="primary" decoration="arrow">
+      <Button
+        role="primary"
+        decoration="arrow"
+        action={{ href: "https://app.hydration.net", target: "_blank" }}
+      >
         Launch App
       </Button>
     </div>

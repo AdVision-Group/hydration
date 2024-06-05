@@ -17,7 +17,7 @@ export default function Footer() {
         <FooterLinks className="order-3 lg:order-4" />
         <SecuredByBadge className="order-5" />
         <div className="flex justify-between lg:items-center items-start order-6 flex-col-reverse lg:flex-row gap-2">
-          <Legal />
+          {/* <Legal /> */}
           <RightsReserved />
         </div>
       </div>
