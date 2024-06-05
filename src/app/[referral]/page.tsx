@@ -1,38 +1,18 @@
-import { Metadata } from "next";
-import { redirect } from "next/navigation";
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://hydration.net"),
-  openGraph: {
-    images: [
-      {
-        url: "https://hydration.net/opengraph-image-ref.png",
-        protocol: "https",
-        hostname: "hydration.net",
-        width: 1200,
-        height: 627,
-        alt: "Hydration | Finance made efficient",
-      },
-    ],
-  },
-  twitter: {
-    images: [
-      {
-        url: "https://hydration.net/twitter-image-ref.png",
-        protocol: "https",
-        hostname: "hydration.net",
-        width: 1200,
-        height: 627,
-        alt: "Hydration | Finance made efficient",
-      },
-    ],
-  },
-};
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function ReferralPage({
   params: { referral },
 }: {
   params: { referral: string };
 }) {
-  return redirect(`https://app.hydration.net/trade/swap?referral=${referral}`);
+  const { push } = useRouter();
+
+  useEffect(() => {
+    if (referral) {
+      push(`https://app.hydration.net/trade/swap?referral=${referral}`);
+    }
+  }, [referral, push]);
+  return null;
 }
