@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "opengraph-image.png",
+        url: "https://hydration.net/opengraph-image.png",
         width: 1200,
         height: 627,
         alt: "Hydration | Finance made efficient",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     images: [
       {
-        url: "twitter-image.png",
+        url: "https://hydration.net/twitter-image.png",
         width: 1200,
         height: 627,
         alt: "Hydration | Finance made efficient",
