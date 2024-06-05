@@ -5,7 +5,7 @@ import Button from "@/components/ui/buttons/button";
 import Socials from "@/components/footer/socials";
 import SupportingBadge from "@/components/badges/supportingBadge";
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import LetterByLetter from "@/components/animation/LetterByLetter";
 import { delayChildren, staggerChildren } from "@/animation/variants";
 import AnimateOnView from "@/animation/motion-section";
@@ -13,13 +13,17 @@ import useProgressiveImage from "@/hooks/useProgressiveImage";
 import useScreenSize from "@/hooks/useScreenSize";
 
 export default function HeroSection() {
+  const sectionRef = useRef(null);
   const bgImage = useProgressiveImage({
     src: "/hero.png",
     placeholderSrc: "/hero-placeholder.png",
+    sectionRef,
   });
+
   return (
     <AnimateOnView className="relative lg:min-h-[820px]">
       <div
+        ref={sectionRef}
         className="bg-cover bg-[center_bottom]  bg-no-repeat lg:min-h-[820px]"
         style={{
           backgroundImage: `url(${bgImage})`,
