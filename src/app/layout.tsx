@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hydration",
+  title: "Hydration | Finance made efficient",
   description:
-    "Hydration is a next-gen DeFi protocol which is designed to bring an ocean of liquidity to Polkadot. Our tool for the job the HydraDX Omnipool - an innovative Automated Market Maker (AMM) which unlocks unparalleled efficiencies by combining all assets in a single trading pool.",
+    "Hydration unites swaps, lending and the Hollar stablecoin under the roof of a scalable appchain.",
   icons: [
     {
       rel: "apple-touch-icon",

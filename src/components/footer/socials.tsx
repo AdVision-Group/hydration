@@ -15,7 +15,7 @@ import { fadeUp } from "@/animation/variants";
 const socials = [
   {
     name: "Substack",
-    href: "https://hydradx.substack.com/",
+    href: "https://hydration.substack.com/",
     logo: SubstackLogo,
   },
   {
