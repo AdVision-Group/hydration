@@ -4,7 +4,7 @@ import { Variants, motion } from "framer-motion";
 export type MotionSectionProps = {
   children: ReactNode;
   className?: string;
-  element?: "section" | "div";
+  element?: "section" | "div" | "article";
   variants?: Variants;
   style?: React.CSSProperties;
   threshold?: number;

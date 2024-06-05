@@ -7,6 +7,11 @@ export function staggerChildren(delay = 0.25) {
         staggerChildren: delay,
       },
     },
+    exit: {
+      transition: {
+        staggerChildren: delay,
+      },
+    },
   } satisfies Variants;
 }
 
@@ -31,6 +36,14 @@ export function fadeUp(y = 20) {
       y: "0",
       transition: {
         duration: 1,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -y,
+      transition: {
+        duration: 0.5,
         ease: [0.2, 0.65, 0.3, 0.9],
       },
     },
@@ -90,4 +103,23 @@ export function scaleUp() {
 
 export function none() {
   return {} satisfies Variants;
+}
+
+export function slideIn({ x = 0, y = 0 }) {
+  return {
+    initial: {
+      opacity: 0,
+      x,
+      y,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
+  } satisfies Variants;
 }

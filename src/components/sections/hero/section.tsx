@@ -60,8 +60,8 @@ function HeroSectionContent() {
       ];
     }
     return [
-      { value: "efficient", translateX: 100 },
-      { value: "simple", translateX: 100 },
+      { value: "efficient", translateX: 0 },
+      { value: "simple", translateX: 0 },
       { value: "unstoppable", translateX: 0 },
     ];
   }, [screenWidth]);
@@ -77,9 +77,9 @@ function HeroSectionContent() {
         className=" w-full justify-end font-gazpacho absolute inset-0 overflow-hidden"
       >
         {current.value.split("").map((char, index) => (
-          <span key={index} className="inline-block">
+          <motion.span key={index} className="inline-block">
             {char}
-          </span>
+          </motion.span>
         ))}
       </motion.div>
     );
@@ -109,7 +109,7 @@ function HeroSectionContent() {
           ) : (
             <div
               style={{
-                translate: screenWidth < 1024 ? 0 : 100,
+                translate: screenWidth < 1024 ? 0 : 0,
               }}
             >
               <LetterByLetter>{texts[0].value}</LetterByLetter>
