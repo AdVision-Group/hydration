@@ -22,7 +22,7 @@ export default function EffectiveTradingSection() {
     ? ({ children }: { children: ReactNode }) => (
         <AnimateOnView>{children}</AnimateOnView>
       )
-    : ({ children }: { children: ReactNode }) => <>{children}</>;
+    : ({ children }: { children: ReactNode }) => <div>{children}</div>;
 
   const cardVariants = isDesktop
     ? [
@@ -33,7 +33,7 @@ export default function EffectiveTradingSection() {
       ]
     : [fadeUp(), fadeUp(), fadeUp(), fadeUp()];
   return (
-    <Wrapper>
+    <AnimateOnView className="pb-20">
       <div className="container mx-auto flex flex-col ~gap-3/5 relative">
         <ScrollAnchor id="trade" />
         <SectionLabel>Efficient Trading</SectionLabel>
@@ -132,6 +132,6 @@ export default function EffectiveTradingSection() {
           />
         </div>
       </div>
-    </Wrapper>
+    </AnimateOnView>
   );
 }
