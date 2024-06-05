@@ -17,14 +17,7 @@ export default function EffectiveTradingSection() {
   const { width: screenWidth } = useScreenSize();
   const isDesktop = screenWidth > 1024;
 
-  const cardVariants = isDesktop
-    ? [
-        slideIn({ x: -100 }),
-        slideIn({ y: -100 }),
-        slideIn({ y: 100 }),
-        slideIn({ x: 100 }),
-      ]
-    : [fadeUp(), fadeUp(), fadeUp(), fadeUp()];
+  const cardVariants = [fadeUp(), fadeUp(), fadeUp(), fadeUp()];
   return (
     <AnimateOnView className="bg-white ~pb-10/[7.5rem] pt-8">
       <div className="container mx-auto flex flex-col ~gap-3/5 relative">
