@@ -109,7 +109,7 @@ function HeroSectionContent() {
           ) : (
             <div
               style={{
-                translate: 0,
+                translate: 100,
               }}
             >
               <LetterByLetter>{texts[0].value}</LetterByLetter>
