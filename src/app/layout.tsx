@@ -42,6 +42,26 @@ export const metadata: Metadata = {
     "msapplication-TileColor": "#ff0000",
     "theme-color": "#ffffff",
   },
+  openGraph: {
+    images: [
+      {
+        url: "opengraph-image.png",
+        width: 1200,
+        height: 627,
+        alt: "Hydration | Finance made efficient",
+      },
+    ],
+  },
+  twitter: {
+    images: [
+      {
+        url: "twitter-image.png",
+        width: 1200,
+        height: 627,
+        alt: "Hydration | Finance made efficient",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
