@@ -12,14 +12,28 @@ import ScrollAnchor from "@/components/scroll-anchor";
 import { fadeUp, slideIn } from "@/animation/variants";
 import AnimateOnView from "@/animation/motion-section";
 import useScreenSize from "@/hooks/useScreenSize";
+import { ReactNode } from "react";
 
 export default function EffectiveTradingSection() {
   const { width: screenWidth } = useScreenSize();
   const isDesktop = screenWidth > 1024;
 
-  const cardVariants = [fadeUp(), fadeUp(), fadeUp(), fadeUp()];
+  const Wrapper = isDesktop
+    ? ({ children }: { children: ReactNode }) => (
+        <AnimateOnView>{children}</AnimateOnView>
+      )
+    : ({ children }: { children: ReactNode }) => <>{children}</>;
+
+  const cardVariants = isDesktop
+    ? [
+        slideIn({ x: -100 }),
+        slideIn({ y: -100 }),
+        slideIn({ y: 100 }),
+        slideIn({ x: 100 }),
+      ]
+    : [fadeUp(), fadeUp(), fadeUp(), fadeUp()];
   return (
-    <AnimateOnView className="bg-white ~pb-10/[7.5rem] pt-8">
+    <Wrapper>
       <div className="container mx-auto flex flex-col ~gap-3/5 relative">
         <ScrollAnchor id="trade" />
         <SectionLabel>Efficient Trading</SectionLabel>
@@ -118,6 +132,6 @@ export default function EffectiveTradingSection() {
           />
         </div>
       </div>
-    </AnimateOnView>
+    </Wrapper>
   );
 }
