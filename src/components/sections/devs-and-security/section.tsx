@@ -81,7 +81,7 @@ export default function DevsAndSecuritySection() {
         </div>
       </div>
       <motion.div
-        variants={staggerChildren(0.5)}
+        variants={staggerChildren(0.2)}
         className="~pt-8/16 ~pb-16/[16.938rem] flex flex-col gap-4 items-center z-10 relative container mx-auto"
       >
         {items.map((item) => (
