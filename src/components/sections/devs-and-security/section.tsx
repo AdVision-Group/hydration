@@ -48,8 +48,8 @@ const items: DevsAndSecurityItemProps[] = [
 export default function DevsAndSecuritySection() {
   const sectionRef = useRef(null);
   const imageSrc = useProgressiveImage({
-    src: "/pool.png",
-    placeholderSrc: "/pool-placeholder.png",
+    src: "/pool.webp",
+    placeholderSrc: "/pool-placeholder.webp",
     sectionRef,
   });
 

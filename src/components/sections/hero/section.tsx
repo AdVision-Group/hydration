@@ -15,8 +15,8 @@ import useScreenSize from "@/hooks/useScreenSize";
 export default function HeroSection() {
   const sectionRef = useRef(null);
   const bgImage = useProgressiveImage({
-    src: "/hero.png",
-    placeholderSrc: "/hero-placeholder.png",
+    src: "/hero.webp",
+    placeholderSrc: "/hero-placeholder.webp",
     sectionRef,
   });
 
