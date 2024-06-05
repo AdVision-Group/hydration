@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       {
         url: "https://hydration.net/opengraph-image.png",
         protocol: "https",
-        host: "hydration.net",
+        hostname: "hydration.net",
         width: 1200,
         height: 627,
         alt: "Hydration | Finance made efficient",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       {
         url: "https://hydration.net/twitter-image.png",
         protocol: "https",
-        host: "hydration.net",
+        hostname: "hydration.net",
         width: 1200,
         height: 627,
         alt: "Hydration | Finance made efficient",
