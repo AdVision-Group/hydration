@@ -42,6 +42,7 @@ export const metadata: Metadata = {
     "msapplication-TileColor": "#ff0000",
     "theme-color": "#ffffff",
   },
+  metadataBase: new URL("https://hydration.net"),
   openGraph: {
     images: [
       {
