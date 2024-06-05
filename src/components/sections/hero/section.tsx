@@ -109,7 +109,7 @@ function HeroSectionContent() {
           ) : (
             <div
               style={{
-                translate: 100,
+                translate: screenWidth < 1024 ? 0 : 100,
               }}
             >
               <LetterByLetter>{texts[0].value}</LetterByLetter>
