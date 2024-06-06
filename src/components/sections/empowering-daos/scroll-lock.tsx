@@ -42,8 +42,6 @@ export default function ScrollLock({ durationPx, render }: ScrollLockProps) {
         : ((scrollY - start) / durationPx) * 100;
   }, [scrollY, durationPx, top]);
 
-  console.log(progress);
-
   return (
     <>
       <InPortal node={portalNode}>{render(progress)}</InPortal>

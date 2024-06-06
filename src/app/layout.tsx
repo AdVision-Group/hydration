@@ -38,10 +38,18 @@ export const metadata: Metadata = {
       url: "/safari-pinned-tab.svg",
     },
   ],
+  //   <meta name="theme-color" content="#F6F6EC">
+  // <meta name="msapplication-navbutton-color" content="#F6F6EC">
+  // <meta name="apple-mobile-web-app-capable" content="yes"/>
+  // <meta name="apple-mobile-web-app-status-bar-style" content="#F6F6EC"></meta>
   other: {
     "msapplication-TileColor": "#ff0000",
     "theme-color": "#ffffff",
     "color-scheme": "only light",
+    "msapplication-navbutton-color": "#ffffff",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar": "#ffffff",
+    "apple-mobile-web-app-status-bar-style": "#ffffff",
   },
   metadataBase: new URL("https://hydration.net"),
   openGraph: {

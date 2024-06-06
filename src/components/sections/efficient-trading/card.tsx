@@ -58,43 +58,38 @@ export default function EfficientTradingCard({
   const isMobile = screenWidth <= 1024;
 
   return (
-    <div>
-      <motion.article
-        className={twMerge(
-          "rounded-lg ~p-3/12 lg:h-[500px] xl:h-[441px]",
-          getColorClassName(theme),
-          className
-        )}
-        variants={cardAnimationVariants}
-      >
-        <motion.div className="relative h-full w-full" variants={fadeUp()}>
-          <div className="flex flex-col gap-4 pb-10 lg:pb-0">
-            <Image
-              src={icon.src}
-              alt={icon.alt}
-              className="~w-12/14 ~h-12/14"
-            />
-            <Heading
-              size="medium"
-              className={theme === "purple" ? "text-lavender" : "text-purple"}
-            >
-              {title}
-            </Heading>
-            <Paragraph
-              size="large"
-              className={twMerge(
-                theme === "purple" ? "text-lavender" : "text-purple-dim",
-                "mt-2"
-              )}
-            >
-              {description}
-            </Paragraph>
-          </div>
-          <div className="lg:absolute flex-col items-end md:flex-row bottom-0 left-0 flex gap-4 justify-end w-full">
-            {buttons}
-          </div>
-        </motion.div>
-      </motion.article>
-    </div>
+    <AnimateOnView
+      element="article"
+      className={twMerge(
+        "rounded-lg ~p-3/12 lg:h-[500px] xl:h-[441px]",
+        getColorClassName(theme),
+        className
+      )}
+      variants={cardAnimationVariants}
+    >
+      <motion.div className="relative h-full w-full" variants={fadeUp()}>
+        <div className="flex flex-col gap-4 pb-10 lg:pb-0">
+          <Image src={icon.src} alt={icon.alt} className="~w-12/14 ~h-12/14" />
+          <Heading
+            size="medium"
+            className={theme === "purple" ? "text-lavender" : "text-purple"}
+          >
+            {title}
+          </Heading>
+          <Paragraph
+            size="large"
+            className={twMerge(
+              theme === "purple" ? "text-lavender" : "text-purple-dim",
+              "mt-2"
+            )}
+          >
+            {description}
+          </Paragraph>
+        </div>
+        <div className="lg:absolute flex-col items-end md:flex-row bottom-0 left-0 flex gap-4 justify-end w-full">
+          {buttons}
+        </div>
+      </motion.div>
+    </AnimateOnView>
   );
 }

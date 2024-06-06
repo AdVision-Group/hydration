@@ -12,20 +12,26 @@ import ScrollAnchor from "@/components/scroll-anchor";
 import { fadeUp, slideIn } from "@/animation/variants";
 import AnimateOnView from "@/animation/motion-section";
 import useScreenSize from "@/hooks/useScreenSize";
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 
 export default function EffectiveTradingSection() {
   const { width: screenWidth } = useScreenSize();
-  const isDesktop = screenWidth > 1024;
+  const isDesktop = useMemo(() => screenWidth > 1024, [screenWidth]);
 
-  const cardVariants = isDesktop
-    ? [
-        slideIn({ x: -100 }),
-        slideIn({ y: -100 }),
-        slideIn({ y: 100 }),
-        slideIn({ x: 100 }),
-      ]
-    : [fadeUp(), fadeUp(), fadeUp(), fadeUp()];
+  const cardVariants = useMemo(
+    () =>
+      isDesktop
+        ? [
+            slideIn({ x: -100 }),
+            slideIn({ y: -100 }),
+            slideIn({ y: 100 }),
+            slideIn({ x: 100 }),
+          ]
+        : [fadeUp(), fadeUp(), fadeUp(), fadeUp()],
+    [isDesktop]
+  );
+
+  console.log({ isDesktop });
   return (
     <AnimateOnView className="pb-20">
       <div className="container mx-auto flex flex-col ~gap-3/5 relative">
