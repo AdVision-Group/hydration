@@ -9,7 +9,7 @@ import { fadeIn } from "@/animation/variants";
 
 export default function EmpoweringDaosMobileContent() {
   return (
-    <AnimateOnView className="bg-purple ~py-12/32">
+    <AnimateOnView threshold={0.2} className="bg-purple ~py-12/32">
       <div className="flex flex-col ~gap-12/40 container mx-auto">
         <div className="flex flex-col gap-4">
           <SectionLabel>Empowering DAOs</SectionLabel>
