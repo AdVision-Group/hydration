@@ -30,7 +30,7 @@ const socials = [
   },
   {
     name: "Telegram",
-    href: "https://t.me/hydradx",
+    href: "https://t.me/hydration_net",
     logo: TelegramLogo,
   },
   {
