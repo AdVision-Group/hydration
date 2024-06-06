@@ -79,6 +79,7 @@ const config: Config = {
       "lavender-inset": "0 0 16px 0 #DFB1F3 inset",
       "blue-inset": "0 0 16px 0 #B3D7FA inset",
       "white-outset": "0px 0px 0px 8px #FFFFFF40",
+      none: "none",
     },
     container: {
       padding: {

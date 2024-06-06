@@ -22,7 +22,7 @@ export default function DevsAndSecurityItem({
     <Link href={href} target="_blank">
       <motion.div
         variants={fadeUp()}
-        className="flex justify-between gap-5 p-2 bg-white rounded-md border border-blue group hover:shadow-white-outset transition"
+        className="flex justify-between gap-5 p-2 bg-white rounded-md border border-blue group lg:hover:shadow-white-outset lg:transition"
       >
         <div className="rounded-sm bg-white shadow-blue-inset min-w-[4.875rem] w-[4.875rem] md:h-[6.125rem] flex justify-center items-center">
           <Icon className="transition-all text-blue group-hover:text-purple" />
