@@ -18,12 +18,6 @@ export default function EffectiveTradingSection() {
   const { width: screenWidth } = useScreenSize();
   const isDesktop = screenWidth > 1024;
 
-  const Wrapper = isDesktop
-    ? ({ children }: { children: ReactNode }) => (
-        <AnimateOnView>{children}</AnimateOnView>
-      )
-    : ({ children }: { children: ReactNode }) => <div>{children}</div>;
-
   const cardVariants = isDesktop
     ? [
         slideIn({ x: -100 }),

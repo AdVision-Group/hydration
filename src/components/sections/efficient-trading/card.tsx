@@ -57,14 +57,8 @@ export default function EfficientTradingCard({
   const { width: screenWidth } = useScreenSize();
   const isMobile = screenWidth <= 1024;
 
-  const Wrapper = isMobile
-    ? ({ children }: { children: ReactNode }) => (
-        <AnimateOnView>{children}</AnimateOnView>
-      )
-    : ({ children }: { children: ReactNode }) => <>{children}</>;
-
   return (
-    <Wrapper>
+    <div>
       <motion.article
         className={twMerge(
           "rounded-lg ~p-3/12 lg:h-[500px] xl:h-[441px]",
@@ -101,6 +95,6 @@ export default function EfficientTradingCard({
           </div>
         </motion.div>
       </motion.article>
-    </Wrapper>
+    </div>
   );
 }
