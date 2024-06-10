@@ -1,32 +1,35 @@
+"use client";
+
 import Link from "next/link";
 import Button from "../ui/buttons/button";
 import Logo from "../icons/logo";
 import { twMerge } from "tailwind-merge";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const menuItems = [
   {
     label: "Trade",
-    href: "/#trade",
+    href: "#trade",
   },
   {
     label: "Lend & Borrow",
-    href: "/#lend-borrow",
+    href: "#lend-borrow",
   },
   {
     label: "HOLLAR",
-    href: "/#hollar",
+    href: "#hollar",
   },
   {
     label: "Referrals",
-    href: "/#referrals",
+    href: "#referrals",
   },
   {
     label: "Governance",
-    href: "/#governance",
+    href: "#governance",
   },
   {
     label: "Devs",
-    href: "/#devs",
+    href: "#devs",
   },
   {
     label: "Docs",
@@ -40,13 +43,20 @@ export type HeaderProps = {
 };
 
 export default function Header({ className }: HeaderProps) {
+  const lenis = useLenis();
   return (
     <header
       className={twMerge("z-40 mx-auto w-full flex justify-center", className)}
     >
       <div className="py-2 xl:py-1 bg-beige px-4 xl:pr-1 xl:rounded-xl xl:mx-10 xl:max-w-[1352px] w-full">
         <div className="flex items-center justify-between xl:max-w-[none]">
-          <Logo size="small" />
+          <button
+            onClick={() => {
+              lenis?.scrollTo(0);
+            }}
+          >
+            <Logo size="small" />
+          </button>
           <nav className="group hidden xl:flex gap-10 justify-center pointer-events-none">
             {menuItems.map((item) => (
               <Link
@@ -54,6 +64,11 @@ export default function Header({ className }: HeaderProps) {
                 href={item.href}
                 target={item.target}
                 className="transition group-hover:opacity-50 hover:!opacity-100 text-base font-medium font-geist leading-5 text-purple pointer-events-auto"
+                onClick={(e) => {
+                  if (item.target === "_blank") return;
+                  e.preventDefault();
+                  lenis?.scrollTo(item.href);
+                }}
               >
                 {item.label}
               </Link>

@@ -1,82 +1,7 @@
-import type { Metadata } from "next";
-import "./globals.css";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Hydration | Finance made efficient",
-  description:
-    "Hydration unites swaps, lending and the Hollar stablecoin under the roof of a scalable appchain.",
-  icons: [
-    {
-      rel: "apple-touch-icon",
-      sizes: "180x180",
-      href: "/apple-touch-icon.png",
-      url: "/apple-touch-icon.png",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      sizes: "32x32",
-      href: "/favicon-32x32.png",
-      url: "/favicon-32x32.png",
-    },
-    {
-      rel: "icon",
-      type: "image/png",
-      sizes: "16x16",
-      href: "/favicon-16x16.png",
-      url: "/favicon-16x16.png",
-    },
-    {
-      rel: "manifest",
-      href: "/site.webmanifest",
-      url: "/site.webmanifest",
-    },
-    {
-      rel: "mask-icon",
-      href: "/safari-pinned-tab.svg",
-      color: "#e53e76",
-      url: "/safari-pinned-tab.svg",
-    },
-  ],
-  //   <meta name="theme-color" content="#F6F6EC">
-  // <meta name="msapplication-navbutton-color" content="#F6F6EC">
-  // <meta name="apple-mobile-web-app-capable" content="yes"/>
-  // <meta name="apple-mobile-web-app-status-bar-style" content="#F6F6EC"></meta>
-  other: {
-    "msapplication-TileColor": "#ff0000",
-    "theme-color": "#ffffff",
-    "color-scheme": "only light",
-    "msapplication-navbutton-color": "#ffffff",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar": "#ffffff",
-    "apple-mobile-web-app-status-bar-style": "#ffffff",
-  },
-  metadataBase: new URL("https://hydration.net"),
-  openGraph: {
-    images: [
-      {
-        url: "https://hydration.net/opengraph-image.png",
-        protocol: "https",
-        hostname: "hydration.net",
-        width: 1200,
-        height: 627,
-        alt: "Hydration | Finance made efficient",
-      },
-    ],
-  },
-  twitter: {
-    images: [
-      {
-        url: "https://hydration.net/twitter-image.png",
-        protocol: "https",
-        hostname: "hydration.net",
-        width: 1200,
-        height: 627,
-        alt: "Hydration | Finance made efficient",
-      },
-    ],
-  },
-};
+import SmoothScrolling from "@/components/smooth";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -84,8 +9,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body>{children}</body>
+    <html lang="en">
+      <body>
+        <SmoothScrolling>{children}</SmoothScrolling>
+      </body>
     </html>
   );
 }

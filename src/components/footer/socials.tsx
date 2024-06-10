@@ -2,6 +2,7 @@
 
 import MediumLogo from "./assets/medium.svg";
 import TwitterLogo from "./assets/twitter.svg";
+import XLogo from "./assets/x.svg";
 import DiscordLogo from "./assets/discord.svg";
 import TelegramLogo from "./assets/telegram.svg";
 import GithubLogo from "./assets/github.svg";
@@ -20,8 +21,8 @@ const socials = [
   },
   {
     name: "Twitter",
-    href: "https://x.com/hydra_dx",
-    logo: TwitterLogo,
+    href: "https://x.com/hydration_net",
+    logo: XLogo,
   },
   {
     name: "Discord",
@@ -47,7 +48,7 @@ type Props = {
 export default function Socials({ className }: Props) {
   return (
     <motion.div
-      className={twMerge("flex gap-8", className)}
+      className={twMerge("flex gap-8 items-center", className)}
       variants={fadeUp()}
     >
       {socials.map((social) => (

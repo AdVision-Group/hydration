@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const linkColums: LinkColumnProps[] = [
   {
@@ -7,11 +10,11 @@ const linkColums: LinkColumnProps[] = [
     links: [
       {
         title: "Trade",
-        href: "/#trade",
+        href: "#trade",
       },
       {
         title: "Lend & Borrow",
-        href: "/#lend-borrow",
+        href: "#lend-borrow",
       },
     ],
   },
@@ -62,6 +65,8 @@ type LinkColumnProps = {
 };
 
 function LinkColumn({ title, links }: LinkColumnProps) {
+  const lenis = useLenis();
+
   return (
     <div className="flex flex-col gap-6">
       <h4 className="font-geist font-medium text-purple-dim">{title}</h4>
@@ -73,6 +78,11 @@ function LinkColumn({ title, links }: LinkColumnProps) {
             className="text-base font-geist  text-purple inline-block pb-[2px] bg-purple-to-transparent bg-[bottom_left] bg-[length:0_2px] bg-no-repeat hover:bg-[bottom_right] hover:bg-[length:100%_2px]"
             style={{
               transition: "background-size 0.3s, background-position 0s 0.3s",
+            }}
+            onClick={(e) => {
+              if (link.target === "_blank") return;
+              e.preventDefault();
+              lenis?.scrollTo(link.href);
             }}
           >
             {link.title}
