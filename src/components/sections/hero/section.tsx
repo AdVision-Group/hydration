@@ -48,27 +48,31 @@ function HeroSectionContent() {
   const [index, setIndex] = useState(0);
   const [intervalStarted, setIntervalStarted] = useState(false);
 
-  useEffect(() => {
-    if (!intervalStarted) return;
-    const intervalId = setInterval(() => setIndex((index) => index + 1), 4000);
-    return () => clearTimeout(intervalId);
-  }, [intervalStarted]);
-
   const { width: screenWidth } = useScreenSize();
 
   const texts = useMemo(() => {
     if (screenWidth < 1024) {
       return [
-        { value: "efficient", translateX: 0 },
-        { value: "simple", translateX: 0 },
+        { value: "efficient", translateX: 0, waitAfter: 4000 },
+        { value: "simple", translateX: 0, waitAfter: 4000 },
       ];
     }
     return [
-      { value: "efficient", translateX: 0 },
-      { value: "simple", translateX: 0 },
-      { value: "unstoppable", translateX: 0 },
+      { value: "efficient", translateX: 0, waitAfter: 3000 },
+      { value: "simple", translateX: 0, waitAfter: 3000 },
+      { value: "unstoppable.", translateX: 0, waitAfter: 5000 },
     ];
   }, [screenWidth]);
+
+  useEffect(() => {
+    if (!intervalStarted) return;
+    const { waitAfter } = texts[index % texts.length];
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      waitAfter
+    );
+    return () => clearTimeout(intervalId);
+  }, [intervalStarted, index, texts]);
 
   const LastWord = useCallback(() => {
     const current = texts[index % texts.length];

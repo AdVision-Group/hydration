@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://hydration.net/opengraph-image.png",
+        url: "https://hydration.net/opengraph-image.jpg",
         protocol: "https",
         hostname: "hydration.net",
         width: 1200,

@@ -96,12 +96,12 @@ body {
   src: url(/font/geist/geist.ttf) format("truetype");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 100 900;
   src: url(/font/inter/inter.ttf) format("truetype");
-}
+} */
 
 @keyframes counter-spin {
   from {

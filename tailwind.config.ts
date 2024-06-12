@@ -73,7 +73,7 @@ const config: Config = {
     fontFamily: {
       geist: ["Geist", "sans-serif"],
       gazpacho: ["Gazpacho", "sans-serif"],
-      inter: ["Inter", "sans-serif"],
+      // inter: ["Inter", "sans-serif"],
     },
     boxShadow: {
       "lavender-inset": "0 0 16px 0 #DFB1F3 inset",
