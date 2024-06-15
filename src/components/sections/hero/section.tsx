@@ -15,13 +15,14 @@ import useScreenSize from "@/hooks/useScreenSize";
 export default function HeroSection() {
   const sectionRef = useRef(null);
   const bgImage = useProgressiveImage({
-    src: "/hero.webp",
-    placeholderSrc: "/hero-placeholder.webp",
+    src: "/hero-hq.jpg",
+    placeholderSrc: "/hero-placeholder-hq.jpg",
     sectionRef,
   });
 
   return (
     <AnimateOnView className="relative lg:min-h-[820px]">
+      <div className="inset-0 pointer-events-none bg-repeat bg-[url(/noise.svg)] bg-[center_bottom]  absolute z-0"></div>
       <div
         ref={sectionRef}
         className="bg-cover bg-[center_bottom]  bg-no-repeat lg:min-h-[820px]"
