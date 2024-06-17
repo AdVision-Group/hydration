@@ -4,7 +4,7 @@ function SmoothScrolling({ children }: { children: React.ReactNode }) {
   // lenis options for configuration
   const lenisOptions = {
     lerp: 0.1,
-    duration: 1.5,
+    duration: 1.2,
     smoothTouch: false, //smooth scroll for touch devices
     smooth: true,
   };
