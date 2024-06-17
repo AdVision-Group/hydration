@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="inset-0 pointer-events-none bg-repeat bg-[url(/noise.svg)] bg-[center_bottom]  absolute z-0"></div>
       <div
         ref={sectionRef}
-        className="bg-cover bg-[center_bottom]  bg-no-repeat lg:min-h-[820px]"
+        className="bg-cover bg-[center_bottom]  bg-no-repeat lg:min-h-[820px] brightness-110"
         style={{
           backgroundImage: `url(${bgImage})`,
         }}
