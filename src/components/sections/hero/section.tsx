@@ -22,7 +22,7 @@ export default function HeroSection() {
 
   return (
     <AnimateOnView className="relative lg:min-h-[820px]">
-      <div className="inset-0 pointer-events-none bg-repeat bg-[url(/noise.svg)] bg-[center_bottom]  absolute z-0"></div>
+      <div className="inset-0 pointer-events-none bg-repeat bg-[url(/noise.svg)] bg-[center_bottom]  absolute z-10 mix-blend-multiply opacity-60 filter grayscale"></div>
       <div
         ref={sectionRef}
         className="bg-cover bg-[center_bottom]  bg-no-repeat lg:min-h-[820px] brightness-110"
