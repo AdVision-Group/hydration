@@ -95,7 +95,7 @@ function HeroSectionContent() {
   }, [index, texts]);
 
   return (
-    <div className="flex flex-col justify-center items-center mx-auto ~pt-[10.5rem]/[15.938rem] pb-[13.438rem] lg:pb-[11.625rem] gap-8">
+    <div className="flex flex-col justify-center items-center mx-auto ~pt-[10.5rem]/[15.938rem] pb-[13.438rem] lg:pb-[11.625rem] gap-8 w-full">
       <motion.section
         className="font-gazpacho w-full"
         variants={staggerChildren()}
@@ -110,7 +110,7 @@ function HeroSectionContent() {
         <span className="block mx-auto ~text-[2.5rem]/[3rem] text-purple text-center italic ~leading-[3.969rem]/[4.76rem] lg:w-[430px]">
           <LetterByLetter>made</LetterByLetter>
         </span>
-        <span className="block ~text-[4.375rem]/[5.315rem] text-purple text-center  font-medium justify-self-end ~leading-[3.969rem]/[4.76rem] relative h-[1em] lg:w-[550px]">
+        <span className="block ~text-[4.375rem]/[5.315rem] text-purple text-center  font-medium justify-self-end ~leading-[3.969rem]/[4.76rem] relative h-[1em] w-full">
           {intervalStarted ? (
             <AnimatePresence initial={false} mode="sync">
               <LastWord key={index} />
