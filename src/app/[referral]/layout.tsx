@@ -5,11 +5,13 @@ export const metadata: Metadata = {
   title: "Hydration | Finance made efficient",
   description:
     "Hydration unites swaps, lending and the Hollar stablecoin under the roof of a scalable appchain.",
-  //   metadataBase: new URL("https://hydration.net"),
+  metadataBase: new URL("https://hydration.net"),
   openGraph: {
     images: [
       {
-        url: "/opengraph-image-ref.jpg",
+        protocol: "https",
+        host: "hydration.net",
+        url: "https://hydration.net/opengraph-image-ref.jpg",
         width: 1200,
         height: 627,
         alt: "Hydration | Finance made efficient",
@@ -19,7 +21,9 @@ export const metadata: Metadata = {
   twitter: {
     images: [
       {
-        url: "/twitter-image-ref.jpg",
+        protocol: "https",
+        host: "hydration.net",
+        url: "https://hydration.net/twitter-image-ref.jpg",
         width: 1200,
         height: 627,
         alt: "Hydration | Finance made efficient",
