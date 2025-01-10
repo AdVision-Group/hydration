@@ -32,7 +32,7 @@ type Props = {
 function RightsReserved({ className }: Props) {
   return (
     <Paragraph size="small" className={className}>
-      ©2024 Hydration, All rights reserved
+      ©{new Date().getFullYear()} Hydration, All rights reserved
     </Paragraph>
   );
 }
