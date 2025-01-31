@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Badge from "./badge";
+import Link from "next/link";
 
 import MetaMaskLogo from "./assets/metamask.svg";
 import NovaLogo from "./assets/nova.png";
@@ -24,10 +25,58 @@ export default function SupportingBadge() {
 function Icons() {
   return (
     <div className="flex gap-1 py-1 pl-1">
-      <Image width={32} height={32} src={MetaMaskLogo} alt="metamask logo" />
-      <Image width={32} height={32} src={NovaLogo} alt="nova logo" />
-      <Image width={32} height={32} src={SubwalletLogo} alt="subwallet logo" />
-      <Image width={32} height={32} src={TalismanLogo} alt="talisman logo" />
+      <Link
+        href="https://metamask.io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          className="transition-transform hover:scale-105"
+          width={32}
+          height={32}
+          src={MetaMaskLogo}
+          alt="MetaMask - The Ultimate Crypto Wallet for DeFi, Web3 Apps, and NFTs"
+        />
+      </Link>
+      <Link
+        href="https://novawallet.io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          className="transition-transform hover:scale-105"
+          width={32}
+          height={32}
+          src={NovaLogo}
+          alt="Nova Wallet — The Leading Mobile Wallet for Polkadot"
+        />
+      </Link>
+      <Link
+        href="https://subwallet.app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          className="transition-transform hover:scale-105"
+          width={32}
+          height={32}
+          src={SubwalletLogo}
+          alt="SubWallet - Highly secure and comprehensive Web3 wallet"
+        />
+      </Link>
+      <Link
+        href="https://talisman.xyz"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          className="transition-transform hover:scale-105"
+          width={32}
+          height={32}
+          src={TalismanLogo}
+          alt="Talisman - An Ethereum and Polkadot wallet"
+        />
+      </Link>
     </div>
   );
 }
