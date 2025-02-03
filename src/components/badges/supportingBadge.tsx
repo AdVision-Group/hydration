@@ -8,7 +8,7 @@ import MetaMaskLogo from "./assets/metamask.svg";
 import NovaLogo from "./assets/nova.png";
 import SubwalletLogo from "./assets/subwallet.svg";
 import TalismanLogo from "./assets/talisman.svg";
-
+import LedgerLogo from "./assets/ledger.webp";
 import { motion } from "framer-motion";
 import { fadeIn, fadeUp } from "@/animation/variants";
 
@@ -75,6 +75,19 @@ function Icons() {
           height={32}
           src={TalismanLogo}
           alt="Talisman - An Ethereum and Polkadot wallet"
+        />
+      </Link>
+      <Link
+        href="https://www.ledger.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          className="transition-transform hover:scale-105 rounded-[4px]"
+          width={31}
+          height={31}
+          src={LedgerLogo}
+          alt="Ledger - The best hardware wallet for crypto"
         />
       </Link>
     </div>
