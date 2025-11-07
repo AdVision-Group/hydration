@@ -1,13 +1,16 @@
 import React from "react";
-import CentrifugeIcon from "./assets/centrifuge.svg";
-import DaiIcon from "./assets/dai.svg";
+// import CentrifugeIcon from "./assets/centrifuge.svg";
+import SolanaIcon from "./assets/solana.svg";
+// import DaiIcon from "./assets/dai.svg";
+import AaveIcon from "./assets/aave.svg";
 import HydrationIcon from "./assets/hydration.svg";
 import PhalaIcon from "./assets/phala.svg";
 import PolkadotIcon from "./assets/polkadot.svg";
 import TetherIcon from "./assets/tether.svg";
 import UsdcIcon from "./assets/usdc.svg";
 import BitcoinIcon from "./assets/bitcoin.svg";
-import KiltIcon from "./assets/kilt.svg";
+// import KiltIcon from "./assets/kilt.svg";
+import HollarIcon from "./assets/hollar.svg";
 import EthereumIcon from "./assets/ethereum.svg";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -59,12 +62,14 @@ function FirstRank() {
   const size = 90;
   const secondsPerSpin = 50;
   const elements = [
-    { image: CentrifugeIcon, alt: "Centrifuge", offsetPercentage: 0 },
+    //  { image: CentrifugeIcon, alt: "Centrifuge", offsetPercentage: 0 },
+    { image: SolanaIcon, alt: "Solana", offsetPercentage: 0 },
     { image: HydrationIcon, alt: "Hydration", offsetPercentage: 11 },
     { image: PolkadotIcon, alt: "Polkadot", offsetPercentage: 27 },
     { image: EthereumIcon, alt: "Ethereum", offsetPercentage: 43 },
     { image: PhalaIcon, alt: "Phala", offsetPercentage: 59 },
-    { image: KiltIcon, alt: "Kilt", offsetPercentage: 70 },
+    //  { image: KiltIcon, alt: "Kilt", offsetPercentage: 70 },
+    { image: AaveIcon, alt: "Aave", offsetPercentage: 70 },
   ];
 
   return (
@@ -92,7 +97,7 @@ function SecondRank() {
   const secondsPerSpin = 30;
 
   const elements = [
-    { image: DaiIcon, alt: "Dai", offsetPercentage: 0 },
+    { image: HollarIcon, alt: "Hollar", offsetPercentage: 0 },
     { image: TetherIcon, alt: "Tether", offsetPercentage: 23 },
     { image: BitcoinIcon, alt: "Bitcoin", offsetPercentage: 56 },
   ];
