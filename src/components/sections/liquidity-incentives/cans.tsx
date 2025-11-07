@@ -66,7 +66,7 @@ export default function LiquidityIncentivesCans() {
             className="text-left"
             animationVariants={fadeIn()}
           >
-            Hydrate Your Summer with up to 260% APR
+            Hydrate Your Summer with up to 69% APR
           </Heading>
           <Paragraph size="large" className="text-purple-dim">
             Start earning rewards by providing liquidity for one of the many
