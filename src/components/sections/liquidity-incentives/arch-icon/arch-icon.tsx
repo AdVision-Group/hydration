@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 type ArchIconProps = {
   icon: StaticImport;
   background: StaticImport;
-  border: StaticImport;
+  border?: StaticImport;
   iconClassName?: string;
 };
 
@@ -31,12 +31,14 @@ export default function ArchIcon({
           iconClassName
         )}
       />
-      <Image
-        src={border}
-        alt="Border"
-        className="absolute inset-0 animate-spin duration w-full h-full"
-        style={{ animationDuration: "10s", scale: 0.93 }}
-      />
+      {border && (
+        <Image
+          src={border}
+          alt="Border"
+          className="absolute inset-0 animate-spin duration w-full h-full"
+          style={{ animationDuration: "10s", scale: 0.93 }}
+        />
+      )}
     </figure>
   );
 }
