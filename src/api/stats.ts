@@ -1,4 +1,4 @@
-const url = "https://api.hydradx.io/hydration-web/v1/stats";
+const url = "https://api.nice.hydration.cloud/hydration-web/v1/stats";
 
 export async function fetchStats() {
   try {
